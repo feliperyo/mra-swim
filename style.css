@@ -172,6 +172,11 @@ footer p {
         font-size: 16px;
     }
 
+    .btn-curso {
+        justify-content: flex-end;
+        gap: 30px;
+    }
+
     .container-right img {
         width: 400px;
     }
@@ -233,6 +238,10 @@ footer p {
     .container-left .p-incluso {
         margin-top: 10px;
         margin-bottom: 30px;
+    }
+
+    .btn-curso {
+        justify-content: space-between;
     }
 
     .btn-curso a {
@@ -305,6 +314,10 @@ footer p {
     .container-right p {
         font-size: 12px;
     }
+
+    footer {
+        position: absolute;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -315,5 +328,9 @@ footer p {
 
     .container-right img {
         width: 350px;
+    }
+
+    footer {
+        position: relative;
     }
 }
