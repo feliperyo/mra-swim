@@ -140,6 +140,39 @@ footer p {
     font-size: 12px;
 }
 
+@media screen and (max-width: 1600px) {
+    header {
+        background-size: 100vw 30vh;
+    }
+
+    header img {
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    main {
+        width: 70%;
+    }
+
+    .container-left {
+        margin-left: 15px;
+        width: 400px;
+    }
+
+    .container-left h1 {
+        font-size: 40px;
+    }
+
+    .container-left h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .container-left p {
+        font-size: 18px;
+    }
+}
+
 @media screen and (max-width: 1030px) {
 
     header {
@@ -158,6 +191,7 @@ footer p {
     .container-left {
         text-align: center;
         margin-left: 0px;
+        width: 325px;
     }
 
     .container-left h2 {
@@ -180,7 +214,7 @@ footer p {
     }
 }
 
-@media screen and (max-width:850px) {
+@media screen and (max-width:800px) {
 
     footer {
         position: relative;
