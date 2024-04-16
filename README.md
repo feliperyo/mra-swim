@@ -6,7 +6,7 @@
 <br>
 
 <div align="center">
-  <img width="800px" src=""/>
+  <img width="800px" src="https://github.com/feliperyo/mra-swim/blob/master/assets/mockup.png?raw=true"/>
 </div>
 <br>
 <div align="center">
