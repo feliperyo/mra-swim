@@ -155,21 +155,53 @@ footer p {
     }
 
     .container-left {
-        margin-left: 15px;
+        margin-left: 40px;
         width: 400px;
     }
 
     .container-left h1 {
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .container-left h2 {
-        font-size: 25px;
+        font-size: 22px;
         margin-bottom: 20px;
     }
 
     .container-left p {
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    .container-right img {
+        width: 400px;
+    }
+
+    footer {
+        height: 75px;
+        gap: 20px;
+        padding: 5px;
+    }
+
+    footer img {
+        width: 25px;
+        height: 25px;
+    }
+
+    footer a img:hover {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-lattes {
+        width: 21px;
+    }
+
+    .logo-lattes:hover {
+        width: 24px;
+    }
+
+    footer p {
+        font-size: 8px;
     }
 }
 
@@ -211,6 +243,27 @@ footer p {
         width: 550px;
         margin-bottom: -5px;
         border-radius: 0 0 30px 30px;
+    }
+
+    footer {
+        height: 100px;
+    }
+
+    footer a img:hover {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-lattes {
+        width: 28px;
+    }
+
+    .logo-lattes:hover {
+        width: 33px;
+    }
+
+    footer p {
+        font-size: 12px;
     }
 }
 
