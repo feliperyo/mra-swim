@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./assets/pool.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+}
+
+header {
+    padding: 20px;
+    background-image: url('./assets/bg-header.png');
+    background-size: 100vw 30vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    width: 120px;
+    margin-top: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(250, 250, 250, 0.7);
+    width: 60%;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 30px;
+    position: relative;
+}
+
+.container-left {
+    text-align: right;
+    margin-left: 75px;
+}
+
+.container-left h1 {
+    font-size: 50px;
+}
+
+.container-left h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.container-left p {
+    font-size: 20px;
+}
+
+.container-left .p-incluso {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-curso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-curso a {
+    text-decoration: none;
+    background-color: rgb(0, 0, 55);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.btn-curso a:hover {
+    background-color: rgb(0, 0, 113);
+}
+
+.btn-curso a:active {
+    opacity: 0.8;
+}
+
+.container-right img {
+    width: 550px;
+    margin-bottom: -5px;
+    border-radius: 0 30px 30px 0;
+}
+
+.container-right p {
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    color: #fff;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(0, 0, 55);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.share {
+    display: flex;
+    gap: 10px;
+}
+
+footer a img:hover {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s ease-in-out;
+}
+
+.logo-lattes {
+    width: 28px;
+    padding-top: 2px;
+}
+
+.logo-lattes:hover {
+    width: 33px;
+    height: auto;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1030px) {
+
+    header {
+        margin-top: -60px;
+    }
+
+    header img {
+        margin-top: 100px;
+    }
+
+    main {
+        flex-direction: column;
+        width: 550px;
+    }
+
+    .container-left {
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .container-left h2 {
+        margin-bottom: 20px;
+    }
+
+    .container-left .p-incluso {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .btn-curso a {
+        margin-bottom: 20px;
+    }
+
+    .container-right img {
+        width: 550px;
+        margin-bottom: -5px;
+        border-radius: 0 0 30px 30px;
+    }
+}
+
+@media screen and (max-width:850px) {
+
+    footer {
+        position: relative;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    header {
+        background-size: 100vw 0vh;
+    }
+
+
+    header img {
+        margin-top: 60px;
+    }
+
+    main {
+        width: 380px;
+    }
+
+    .container-left h1 {
+        font-size: 40px;
+    }
+
+    .container-left h2 {
+        font-size: 25px;
+    }
+
+    .container-right img {
+        width: 380px;
+    }
+
+    .container-right p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    main {
+        width: 350px;
+    }
+
+    .container-right img {
+        width: 350px;
+    }
+}
