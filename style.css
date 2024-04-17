@@ -240,6 +240,7 @@ video {
         height: 55px;
         gap: 5px;
         padding: 3px;
+        position: relative;
     }
 
     footer a img {
@@ -344,6 +345,7 @@ video {
         height: 100px;
         padding: 15px;
         margin-top: 20px;
+        position: absolute;
     }
 
     footer a img {
