@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('./assets/pool.jpg');
+    background-image: url('./assets/video-bg.mp4');
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
@@ -22,6 +22,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 header img {
@@ -34,16 +35,20 @@ main {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(250, 250, 250, 0.7);
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
-    padding: 0;
+    padding: 0px;
     border-radius: 30px;
     position: relative;
 }
 
 .container-left {
-    text-align: right;
-    margin-left: 75px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 50px;
+    margin: 0 auto;
 }
 
 .container-left h1 {
@@ -52,11 +57,33 @@ main {
 
 .container-left h2 {
     font-size: 35px;
+}
+
+.container-left h4 {
+    margin-top: 10px;
     margin-bottom: 30px;
+}
+
+.logo-lattes {
+    width: 35px;
+    transition: 0.3s;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: -2px;
+}
+
+.logo-lattes:hover {
+    width: 38px;
+    height: auto;
 }
 
 .container-left p {
     font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.container-p {
+    width: 500px;
 }
 
 .container-left .p-incluso {
@@ -67,8 +94,9 @@ main {
 
 .btn-curso {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    width: 100%;
 }
 
 .btn-curso a {
@@ -88,7 +116,7 @@ main {
 }
 
 .container-right img {
-    width: 550px;
+    width: 650px;
     margin-bottom: -5px;
     border-radius: 0 30px 30px 0;
 }
@@ -103,7 +131,7 @@ main {
 footer {
     position: absolute;
     bottom: 0;
-    background-color: rgb(0, 0, 55);
+    background-color: rgba(0, 0, 55, 0.8);
     width: 100%;
     height: 100px;
     display: flex;
@@ -126,149 +154,208 @@ footer a img:hover {
     transition: 0.3s ease-in-out;
 }
 
-.logo-lattes {
-    width: 28px;
-    padding-top: 2px;
-}
-
-.logo-lattes:hover {
-    width: 33px;
-    height: auto;
-}
-
 footer p {
     font-size: 12px;
 }
 
+video {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -99;
+}
+
 @media screen and (max-width: 1600px) {
+
     header {
-        background-size: 100vw 30vh;
+        margin-bottom: 0px;
     }
 
     header img {
-        width: 75px;
-        margin-top: 20px;
+        width: 80px;
+        margin-top: 25px;
     }
 
     main {
-        width: 70%;
+        width: 80%;
     }
 
     .container-left {
-        margin-left: 40px;
-        width: 400px;
+        padding: 10px 0px;
     }
 
     .container-left h1 {
-        font-size: 38px;
+        font-size: 30px;
     }
 
     .container-left h2 {
-        font-size: 22px;
-        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .container-left h3 {
+        font-size: 12px;
+    }
+
+    .container-left h4 {
+        font-size: 10px;
+        margin-bottom: 15px;
+    }
+
+    .logo-lattes {
+        width: 20px;
+    }
+
+    .logo-lattes:hover {
+        width: 25px;
     }
 
     .container-left p {
-        font-size: 16px;
+        font-size: 10px;
     }
 
-    .btn-curso {
-        justify-content: flex-end;
-        gap: 30px;
+    .container-p {
+        width: 450px;
+    }
+
+    .container-left .p-incluso {
+        font-size: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .btn-curso a {
+        font-size: 10px;
     }
 
     .container-right img {
         width: 400px;
     }
 
-    footer {
-        height: 65px;
-        gap: 10px;
-        padding: 5px;
+    .container-right p {
+        font-size: 12px;
     }
 
-    footer img {
+    footer {
+        height: 55px;
+        gap: 5px;
+        padding: 3px;
+    }
+
+    footer a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer a img:hover {
         width: 25px;
         height: 25px;
     }
 
-    footer a img:hover {
-        width: 30px;
-        height: 30px;
-    }
-
-    .logo-lattes {
-        width: 21px;
-    }
-
-    .logo-lattes:hover {
-        width: 24px;
-    }
-
     footer p {
-        font-size: 8px;
+        font-size: 10px;
     }
 }
 
 @media screen and (max-width: 1030px) {
-
     header {
-        margin-top: -60px;
+        margin-bottom: 0px;
+        background-size: 100vw 0vh;
     }
 
     header img {
-        margin-top: 100px;
+        width: 110px;
+        margin-top: 15px;
     }
 
     main {
+        width: 700px;
         flex-direction: column;
-        width: 550px;
+        margin-top: 10px;
+        margin-bottom: -10px;
     }
 
     .container-left {
-        text-align: center;
-        margin-left: 0px;
-        width: 325px;
+        padding: 10px 50px;
+    }
+
+    .container-left h1 {
+        font-size: 50px;
     }
 
     .container-left h2 {
-        margin-bottom: 20px;
+        font-size: 35px;
     }
 
-    .container-left .p-incluso {
+    .container-left h3 {
+        font-size: 20px;
+    }
+
+    .container-left h4 {
+        font-size: 25px;
         margin-top: 10px;
         margin-bottom: 30px;
     }
 
-    .btn-curso {
-        justify-content: space-between;
+    .logo-lattes {
+        width: 35px;
+        transition: 0.3s;
+        margin-left: 10px;
+        padding-top: 5px;
+        padding-bottom: -2px;
+    }
+
+    .logo-lattes:hover {
+        width: 38px;
+        height: auto;
+    }
+
+    .container-left p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .container-p {
+        width: 500px;
+    }
+
+    .container-left .p-incluso {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 
     .btn-curso a {
-        margin-bottom: 20px;
+        font-size: 20px;
     }
 
     .container-right img {
-        width: 550px;
-        margin-bottom: -5px;
+        width: 700px;
         border-radius: 0 0 30px 30px;
+    }
+
+    .container-right p {
+        right: 20px;
+        bottom: 10px;
+        font-size: 15px;
     }
 
     footer {
         height: 100px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    footer a img {
+        width: 35px;
+        height: 35px;
+        transition: 0.3s ease-in-out;
     }
 
     footer a img:hover {
         width: 40px;
         height: 40px;
-    }
-
-    .logo-lattes {
-        width: 28px;
-    }
-
-    .logo-lattes:hover {
-        width: 33px;
+        transition: 0.3s ease-in-out;
     }
 
     footer p {
@@ -276,27 +363,27 @@ footer p {
     }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 830px) {
 
     footer {
         position: relative;
-        margin-top: 50px;
     }
 }
 
 @media screen and (max-width: 500px) {
 
-    header {
-        background-size: 100vw 0vh;
-    }
-
 
     header img {
-        margin-top: 60px;
+        width: 80px;
     }
 
     main {
-        width: 380px;
+        width: 370px;
+        margin-bottom: 50px;
+    }
+
+    .container-left {
+        padding: 10px 10px;
     }
 
     .container-left h1 {
@@ -307,16 +394,61 @@ footer p {
         font-size: 25px;
     }
 
+    .container-left h4 {
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .container-left p {
+        font-size: 15px;
+    }
+
+    .container-p {
+        width: 350px;
+    }
+
+    .container-left .p-incluso {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .btn-curso a {
+        font-size: 20px;
+    }
+
     .container-right img {
-        width: 380px;
+        width: 370px;
+        border-radius: 0 0 30px 30px;
     }
 
     .container-right p {
-        font-size: 12px;
+        right: 20px;
+        bottom: 10px;
+        font-size: 15px;
     }
 
     footer {
-        position: absolute;
+        height: 100px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    footer a img {
+        width: 35px;
+        height: 35px;
+        transition: 0.3s ease-in-out;
+    }
+
+    footer a img:hover {
+        width: 40px;
+        height: 40px;
+        transition: 0.3s ease-in-out;
+    }
+
+    footer p {
+        font-size: 12px;
     }
 }
 
@@ -326,11 +458,14 @@ footer p {
         width: 350px;
     }
 
+    .container-p {
+        width: 330px;
+    }
+
+
     .container-right img {
         width: 350px;
     }
 
-    footer {
-        position: relative;
-    }
+
 }
