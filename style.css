@@ -99,19 +99,20 @@ main {
     width: 100%;
 }
 
-.btn-curso a {
+.btn-curso .btn-wpp {
     text-decoration: none;
     background-color: rgb(0, 0, 55);
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 5px 7px;
+    border-radius: 50%;
     color: #fff;
+    cursor: pointer;
 }
 
-.btn-curso a:hover {
+.btn-curso .btn-wpp:hover {
     background-color: rgb(0, 0, 113);
 }
 
-.btn-curso a:active {
+.btn-curso .btn-wpp:active {
     opacity: 0.8;
 }
 
@@ -164,6 +165,68 @@ video {
     position: fixed;
     top: 0;
     z-index: -99;
+}
+
+.form-mask {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    z-index: 99;
+}
+
+.form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: fixed;
+    top: 35%;
+    left: -350px;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 999;
+    transition: 0.4s ease-in-out;
+}
+
+input {
+    width: 270px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    outline-color: gray;
+}
+
+textarea {
+    width: 270px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    padding-top: 5px;
+    outline-color: gray;
+}
+
+.btn-form {
+    text-decoration: none;
+    background-color: rgb(0, 0, 55);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-form:hover {
+    background-color: rgb(0, 0, 113);
+}
+
+.btn-form:active {
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 1600px) {
