@@ -320,6 +320,10 @@ textarea {
     footer p {
         font-size: 10px;
     }
+
+    .form {
+        top: 25%;
+    }
 }
 
 @media screen and (max-width: 1030px) {
@@ -426,6 +430,10 @@ textarea {
 
     footer p {
         font-size: 12px;
+    }
+
+    .form {
+        top: 35%;
     }
 }
 
