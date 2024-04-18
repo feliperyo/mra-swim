@@ -292,7 +292,8 @@ textarea {
     }
 
     .container-right img {
-        width: 470px;
+        width: 480px;
+        margin-left: -10px;
     }
 
     .container-right p {
