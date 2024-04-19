@@ -29,13 +29,41 @@ header {
 nav {
     position: absolute;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    padding: 0 100px;
+    align-items: center;
     width: 100%;
     gap: 5px;
-    margin-left: 10%;
 }
 
-nav a {
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-right a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-lattes {
+    width: 35px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.nav-right:hover {
+    font-size: 18px;
+}
+
+nav .nav-left a {
     cursor: pointer;
     text-decoration: none;
     color: rgb(0, 102, 255);
@@ -45,16 +73,16 @@ nav a {
     padding: 0 5px;
 }
 
-nav a:hover {
+nav .nav-left a:hover {
     background-color: rgb(0, 0, 0);
     font-size: 22px;
 }
 
-nav a:active {
+nav .nav-left a:active {
     opacity: 0.3;
 }
 
-header img {
+.logo-header img {
     width: 120px;
     margin-top: 50px;
 }
@@ -168,19 +196,6 @@ main {
 .container-left h4 {
     margin-top: 10px;
     margin-bottom: 30px;
-}
-
-.logo-lattes {
-    width: 35px;
-    transition: 0.3s;
-    margin-left: 10px;
-    padding-top: 5px;
-    padding-bottom: -2px;
-}
-
-.logo-lattes:hover {
-    width: 38px;
-    height: auto;
 }
 
 .container-left p {
@@ -353,7 +368,7 @@ textarea {
         margin-bottom: 0px;
     }
 
-    header img {
+    .logo-header img {
         width: 80px;
         margin-top: 25px;
     }
@@ -455,8 +470,17 @@ textarea {
 }
 
 @media screen and (max-width: 1030px) {
-    header {
+    .nav-left {
         display: none;
+    }
+
+    header {
+        background-size: 100vw 20vh;
+    }
+
+    nav {
+        justify-content: center;
+        margin-top: 25%;
     }
 
     main {
@@ -569,8 +593,24 @@ textarea {
 @media screen and (max-width: 500px) {
 
 
-    header img {
+    .logo-header img {
         width: 80px;
+    }
+
+    nav {
+        padding: 0 10px;
+    }
+
+    .nav-right {
+        margin-top: 25%;
+    }
+
+    .nav-right a {
+        font-size: 14px;
+    }
+
+    .logo-lattes {
+        width: 30px;
     }
 
     main {
