@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MRA Natação</title>
+</head>
+
+<body>
+    <div onclick="closeForm()" class="form-mask"></div>
+
+    <header>
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./curso.html">Curso</a>
+            <a href="./filmagem.html">Filmagem e Análise</a>
+            <a href="./aulas.html">Aulas e Treinos</a>
+        </nav>
+
+        <div class="logo-header">
+            <img src="./assets/logo-header-img.png" alt="logo" />
+        </div>
+    </header>
+
+    <main>
+        <section class="container-left">
+            <h1>NATAÇÃO</h1>
+            <h2>Filmagens ➢ Análises</h2>
+            <h3>Destinado à:
+                <br>Professores e treinadores
+            </h3>
+            <h4>Alunos (diferentes níveis de habilidade)
+                <br>Atletas (categorias de mirim a master) </a>
+            </h4>
+
+            <div class="container-p">
+                <p>Filmagem - 4 Nados (aérea e aquática )</p>
+                <p>Filmagem - SAÍDAS e VIRADAS</p>
+                <p class="p-incluso">
+                    Análise Específica de velocidade média de sua prova (Veltest)<br>
+                    Análise do Índice de Respiração do nado crawl (IdR)<br>
+                    Análise do Índice de coordenação dos 4 nados (IdC)</p>
+            </div>
+            <h4>Receba as filmagens editadas e um relatório gráfico em Pdf de suas análises</h4>
+
+            <div class="btn-curso">
+                <a class="btn-wpp" href="https://wa.me/5511942314022" title="Enviar mensagem para Marcos"
+                    target="_blank"><img width="25" height="25"
+                        src="https://img.icons8.com/ios/50/ffffff/whatsapp--v1.png" alt="whatsapp--v1" /></a>
+                <a onclick="agendar()" class="btn-form" title="Enviar email para Marcos" target="_blank">Agende</a>
+            </div>
+        </section>
+        <section class="container-right">
+            <p>youtube/@mranatacao</p>
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/fpK2leMPT7U?si=LTgk3ibnTte7eQzt&amp;start=7"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <div class="main">
+        <section class="link-curso">
+            <h1>Curso NATAÇÃO</h1>
+            <h2>Formativa ➢ Competitiva</h2>
+            <a href="./curso.html">
+                Saiba Mais
+            </a>
+            <img src="./assets/container-img.jpg">
+        </section>
+        <section class="link-aula">
+            <h1>Formações NATAÇÃO</h1>
+            <h2>Aulas ➢ Treinos</h2>
+            <a href="./aulas.html">
+                Saiba Mais
+            </a>
+            <img src="./assets/aulas-img.jpg">
+        </section>
+    </div>
+
+    <footer>
+        <div class="share">
+            <a href="https://www.instagram.com/marcao_apolinario/" title="Abrir Instagram de Marcos"
+                target="_blank"><img width="35" height="35"
+                    src="https://img.icons8.com/ios/50/ffffff/instagram-new--v1.png" alt="instagram-new--v1" /></a>
+            <a href="https://www.youtube.com/@mranatacao" title="Abrir Youtube de Marcos" target="_blank"><img
+                    width="35" height="35" src="https://img.icons8.com/ios/50/ffffff/youtube-squared.png"
+                    alt="youtube-squared" /></a>
+        </div>
+
+        <p>© 2024 MRA Natação</p>
+    </footer>
+
+    <div class="video-bg">
+        <video src="./assets/video-bg.mp4" alt="video de fundo" autoplay muted loop></video>
+    </div>
+
+    <form class="form" action="https://formcarry.com/s/eR2DXm4xSg1" method="POST" enctype="multipart/form-data">
+        <input type="text" name="nome" placeholder="Seu Nome" />
+        <input type="email" name="email" placeholder="Seu Email" />
+        <input type="tel" name="telefone" placeholder="Seu Celular" />
+        <textarea name="agendar" placeholder="Fale comigo!!"></textarea>
+        <button type="submit" class="btn-form">Enviar</button>
+    </form>
+</body>
+<script src="./scripts.js"></script>
+
+</html>

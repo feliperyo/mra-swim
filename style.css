@@ -26,6 +26,43 @@ header {
     margin-bottom: 50px;
 }
 
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 7%;
+}
+
+nav a {
+    margin-left: 7%;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+}
+
+nav a::after {
+    position: absolute;
+    content: '';
+    width: 0%;
+    background-color: #fff;
+    left: 50%;
+    bottom: -3px;
+    height: 1px;
+}
+
+nav a:hover::after {
+    width: 100%;
+    transition: 0.2s;
+    left: -0%;
+}
+
+nav a:active {
+    opacity: 0.3;
+}
+
 header img {
     width: 120px;
     margin-top: 50px;
@@ -37,10 +74,85 @@ main {
     align-items: center;
     background-color: rgba(250, 250, 250, 0.7);
     width: 70%;
-    margin: 0 auto;
+    margin: 0 auto 200px auto;
     padding: 0px;
     border-radius: 30px;
     position: relative;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 100px;
+}
+
+.link-curso {
+    background-color: rgba(250, 250, 250, 0.7);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 15px;
+}
+
+.link-curso img {
+    width: 400px;
+    border-radius: 0 0 20px 20px;
+}
+
+.link-filmagem {
+    background-color: rgba(250, 250, 250, 0.7);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 15px;
+}
+
+.link-filmagem img {
+    width: 400px;
+    border-radius: 0 0 20px 20px;
+}
+
+.link-aula {
+    background-color: rgba(250, 250, 250, 0.7);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 15px;
+}
+
+.link-aula img {
+    width: 400px;
+    border-radius: 0 0 20px 20px;
+}
+
+.main a {
+    text-decoration: none;
+    background-color: rgb(0, 0, 55);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    width: 130px;
+    margin: 0 auto;
+}
+
+.main a:hover {
+    background-color: rgb(0, 0, 113);
+    font-size: 18px;
+}
+
+.main a:active {
+    opacity: 0.8;
 }
 
 .container-left {
@@ -87,6 +199,15 @@ main {
     width: 500px;
 }
 
+.container-p h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.span-title {
+    font-size: 15px;
+}
+
 .container-left .p-incluso {
     font-size: 18px;
     margin-top: 20px;
@@ -131,8 +252,15 @@ main {
     color: #fff;
 }
 
+iframe {
+    width: 650px;
+    height: 550px;
+    margin-bottom: -5px;
+    border-radius: 0 30px 30px 0;
+}
+
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background-color: rgba(0, 0, 55, 0.8);
     width: 100%;
@@ -143,7 +271,7 @@ footer {
     align-items: center;
     color: #fff;
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 .share {
@@ -307,7 +435,6 @@ textarea {
         height: 75px;
         gap: 5px;
         padding: 10px;
-        position: relative;
         margin-top: 30px;
     }
 
@@ -332,13 +459,7 @@ textarea {
 
 @media screen and (max-width: 1030px) {
     header {
-        margin-bottom: 0px;
-        background-size: 100vw 0vh;
-    }
-
-    header img {
-        width: 110px;
-        margin-top: 15px;
+        display: none;
     }
 
     main {
@@ -346,6 +467,12 @@ textarea {
         flex-direction: column;
         margin-top: 10px;
         margin-bottom: -10px;
+    }
+
+    .main {
+        margin: 75px auto;
+        gap: 50px;
+        flex-direction: column;
     }
 
     .container-left {
@@ -404,6 +531,14 @@ textarea {
 
     .container-right img {
         width: 700px;
+        margin-left: 0;
+        border-radius: 0 0 30px 30px;
+    }
+
+    iframe {
+        width: 700px;
+        height: 550px;
+        margin-bottom: -5px;
         border-radius: 0 0 30px 30px;
     }
 
@@ -417,7 +552,6 @@ textarea {
         height: 100px;
         padding: 15px;
         margin-top: 20px;
-        position: absolute;
     }
 
     footer a img {
@@ -441,13 +575,6 @@ textarea {
     }
 }
 
-@media screen and (max-width: 830px) {
-
-    footer {
-        position: relative;
-    }
-}
-
 @media screen and (max-width: 500px) {
 
 
@@ -456,7 +583,7 @@ textarea {
     }
 
     main {
-        width: 370px;
+        width: 400px;
         margin-bottom: 50px;
     }
 
@@ -497,7 +624,14 @@ textarea {
     }
 
     .container-right img {
-        width: 370px;
+        width: 400px;
+        border-radius: 0 0 30px 30px;
+    }
+
+    iframe {
+        width: 400px;
+        height: 200px;
+        margin-bottom: -5px;
         border-radius: 0 0 30px 30px;
     }
 
@@ -540,10 +674,24 @@ textarea {
         width: 330px;
     }
 
-
     .container-right img {
         width: 350px;
     }
 
+    iframe {
+        width: 350px;
+        height: 200px;
+    }
 
+    .link-curso img {
+        width: 350px;
+    }
+
+    .link-filmagem img {
+        width: 350px;
+    }
+
+    .link-aula img {
+        width: 350px;
+    }
 }
