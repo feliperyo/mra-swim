@@ -99,6 +99,7 @@ main {
     flex-direction: column;
     padding-top: 30px;
     gap: 15px;
+    position: relative;
 }
 
 .link-filmagem {
@@ -108,6 +109,7 @@ main {
     flex-direction: column;
     padding-top: 30px;
     gap: 15px;
+    position: relative;
 }
 
 .link-aula {
@@ -117,6 +119,7 @@ main {
     flex-direction: column;
     padding-top: 30px;
     gap: 15px;
+    position: relative;
 }
 
 .bg-img {
@@ -143,6 +146,13 @@ main {
 
 .main a:active {
     opacity: 0.8;
+}
+
+.logo-arw {
+    position: absolute;
+    width: 100px;
+    right: 0;
+    bottom: 0;
 }
 
 .container-left {
@@ -229,17 +239,10 @@ main {
     opacity: 0.8;
 }
 
-.container-right img {
+.container-right-img {
     width: 650px;
     margin-bottom: -5px;
     border-radius: 0 30px 30px 0;
-}
-
-.container-right p {
-    position: absolute;
-    right: 15px;
-    bottom: 5px;
-    color: #fff;
 }
 
 iframe {
@@ -366,7 +369,7 @@ textarea {
     }
 
     .main {
-        gap: 25px;
+        gap: 15px;
     }
 
     .container-left {
@@ -416,7 +419,7 @@ textarea {
         font-size: 10px;
     }
 
-    .container-right img {
+    .container-right-img {
         width: 480px;
         margin-left: -10px;
     }
@@ -523,7 +526,7 @@ textarea {
         font-size: 20px;
     }
 
-    .container-right img {
+    .container-right-img {
         width: 700px;
         margin-left: 0;
         border-radius: 0 0 30px 30px;
@@ -534,12 +537,6 @@ textarea {
         height: 550px;
         margin-bottom: -5px;
         border-radius: 0 0 30px 30px;
-    }
-
-    .container-right p {
-        right: 20px;
-        bottom: 10px;
-        font-size: 15px;
     }
 
     footer {
@@ -617,7 +614,7 @@ textarea {
         font-size: 20px;
     }
 
-    .container-right img {
+    .container-right-img {
         width: 400px;
         border-radius: 0 0 30px 30px;
     }
@@ -627,12 +624,6 @@ textarea {
         height: 200px;
         margin-bottom: -5px;
         border-radius: 0 0 30px 30px;
-    }
-
-    .container-right p {
-        right: 20px;
-        bottom: 10px;
-        font-size: 15px;
     }
 
     footer {
@@ -668,7 +659,7 @@ textarea {
         width: 330px;
     }
 
-    .container-right img {
+    .container-right-img {
         width: 350px;
     }
 
