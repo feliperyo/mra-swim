@@ -359,6 +359,11 @@ textarea {
         margin-bottom: 0px;
     }
 
+    nav {
+        align-items: center;
+        gap: 10%;
+    }
+
     header img {
         width: 80px;
         margin-top: 25px;
