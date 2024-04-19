@@ -359,7 +359,7 @@ textarea {
     }
 
     main {
-        width: 70%;
+        width: 95%;
     }
 
     .main {
@@ -367,19 +367,19 @@ textarea {
     }
 
     .container-left {
-        padding: 10px 0px;
+        padding: 0px 0px;
     }
 
     .container-left h1 {
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .container-left h2 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .container-left h3 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .container-left h4 {
@@ -400,7 +400,7 @@ textarea {
     }
 
     .container-p {
-        width: 450px;
+        width: 500px;
     }
 
     .container-left .p-incluso {
@@ -414,13 +414,13 @@ textarea {
     }
 
     .container-right-img {
-        width: 480px;
+        height: 100%;
         margin-left: -10px;
     }
 
     iframe {
-        width: 480px;
-        height: 450px;
+        width: 550px;
+        height: 500px;
         margin-bottom: -4px;
     }
 
