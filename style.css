@@ -92,7 +92,7 @@ main {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(250, 250, 250, 0.7);
-    width: 70%;
+    width: 75%;
     margin: 0 auto 200px auto;
     padding: 0px;
     border-radius: 30px;
@@ -193,9 +193,19 @@ main {
     margin-bottom: 15px;
 }
 
+.container-left h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.span-h3 {
+    font-weight: 100;
+    font-size: 24px;
+}
+
 .container-left h4 {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .container-left p {
@@ -204,17 +214,22 @@ main {
     line-height: 30px;
 }
 
+.span-p {
+    font-weight: 900;
+}
+
 .container-p {
-    width: 500px;
+    width: 550px;
 }
 
 .container-p h5 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 25px;
+    margin-top: 30px;
 }
 
 .span-title {
     font-size: 15px;
+    font-weight: 100;
 }
 
 .container-left .p-incluso {
