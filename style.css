@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -384,6 +384,27 @@ textarea {
     opacity: 0.8;
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0%);
+    transition: all 1s;
+}
+
+.main :nth-child(2) {
+    transition-delay: 400ms;
+}
+
+.main :nth-child(3) {
+    transition-delay: 700ms;
+}
 
 
 @media screen and (max-width: 1600px) {
