@@ -82,9 +82,20 @@ nav .nav-left a:active {
     opacity: 0.3;
 }
 
-.logo-header img {
+.a-logo-header {
     width: 120px;
+    height: 120px;
     margin-top: 50px;
+    border-radius: 50%;
+    background-image: url('./assets/MRA2024.jpg');
+    background-size: cover;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px black;
+    z-index: 999;
+}
+
+.a-logo-header:hover {
+    background-image: url('./assets/MRA2024.gif');
 }
 
 main {
