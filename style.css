@@ -5,6 +5,18 @@
     transition: all 0.2s ease-in-out;
 }
 
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeInAnimation ease 2s;
+    animation: fadeOutAnimation ease 2s;
+    animation-fill-mode: forwards;
+    transition: all 2s ease-in-out;
+}
+
 body {
     background-image: url('./assets/video-bg.mp4');
     background-size: cover;
@@ -416,6 +428,26 @@ textarea {
 
 .main .a-btn:active {
     opacity: 0.8;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
 
