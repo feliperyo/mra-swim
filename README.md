@@ -1,7 +1,7 @@
 <h1 align="center">
   MRA Natação</h1>
 <br>
-<h3 align="center">Projeto Freelance utilizando HTML, CSS e Responsividade.</h3>
+<h3 align="center">Projeto Freelance utilizando HTML, CSS, JavaScript e Responsividade.</h3>
 <br>
 <br>
 
