@@ -231,6 +231,11 @@ main {
     width: 550px;
 }
 
+.mentoria {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .container-p h5 {
     font-size: 25px;
     margin-top: 30px;
