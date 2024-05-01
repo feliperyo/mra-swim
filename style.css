@@ -551,6 +551,10 @@ textarea {
         width: 95%;
     }
 
+    .curso {
+        height: 1000px;
+    }
+
     .main {
         gap: 15px;
     }
