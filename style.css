@@ -551,8 +551,14 @@ textarea {
         width: 95%;
     }
 
+    .main-cursos {
+        gap: 20px;
+        align-items: self-start;
+        margin-top: 20px;
+    }
+
     .curso {
-        height: 1000px;
+        height: auto;
     }
 
     .main {
@@ -670,12 +676,13 @@ textarea {
 
     .main-cursos {
         flex-direction: column;
+        gap: 50px;
+        align-items: center;
         margin-top: 100px;
     }
 
     .curso {
         width: 700px;
-        height: auto;
     }
 
     .main {
