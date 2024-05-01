@@ -122,6 +122,65 @@ main {
     position: relative;
 }
 
+.main-cursos {
+    display: flex;
+    width: 100%;
+    min-height: 60vh;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    padding: 0px 50px 100px;
+    margin-bottom: 110px;
+    margin-top: -40px;
+}
+
+.curso1 {
+    background-color: rgba(255, 253, 232, 0.7);
+}
+
+.curso2 {
+    background-color: rgba(233, 235, 255, 0.7);
+}
+
+.curso3 {
+    background-color: rgba(255, 229, 229, 0.7);
+}
+
+.curso {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 25px;
+    text-align: center;
+    width: 800px;
+    height: 670px;
+}
+
+.curso .div-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.curso ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+}
+
+.curso span {
+    font-weight: 900;
+}
+
 .main {
     display: flex;
     width: 100%;
@@ -131,7 +190,7 @@ main {
     gap: 100px;
     text-align: center;
     text-decoration: none;
-    padding: 10px 100px;
+    padding: 50px 100px 50px;
     margin-bottom: 110px;
 }
 
@@ -153,6 +212,10 @@ main {
     padding-top: 30px;
     gap: 15px;
     position: relative;
+}
+
+.link-filmagem .nados {
+    width: 150px;
 }
 
 .link-aula {
@@ -250,6 +313,14 @@ main {
     font-size: 18px;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.box-btn {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-curso {
@@ -403,6 +474,14 @@ textarea {
     filter: blur(0px);
     transform: translateX(0%);
     transition: all 1s;
+}
+
+.main-cursos :nth-child(2) {
+    transition-delay: 400ms;
+}
+
+.main-cursos :nth-child(3) {
+    transition-delay: 700ms;
 }
 
 .main :nth-child(2) {
@@ -585,6 +664,16 @@ textarea {
         margin-bottom: -10px;
     }
 
+    .main-cursos {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .curso {
+        width: 700px;
+        height: auto;
+    }
+
     .main {
         margin: 75px auto;
         gap: 50px;
@@ -684,6 +773,14 @@ textarea {
         top: 35%;
     }
 
+    .main-cursos :nth-child(2) {
+        transition-delay: 0ms;
+    }
+
+    .main-cursos :nth-child(3) {
+        transition-delay: 0ms;
+    }
+
     .main :nth-child(2) {
         transition-delay: 0ms;
     }
@@ -721,6 +818,10 @@ textarea {
         width: 400px;
         margin-bottom: 50px;
         margin-top: 75px;
+    }
+
+    .curso {
+        width: 375px;
     }
 
     .container-left {
