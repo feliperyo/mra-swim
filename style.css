@@ -122,7 +122,8 @@ main {
     position: relative;
 }
 
-.main-cursos {
+.main-cursos,
+.main-film {
     display: flex;
     width: 100%;
     min-height: 60vh;
@@ -130,8 +131,8 @@ main {
     justify-content: center;
     gap: 50px;
     text-align: center;
-    padding: 0px 50px 100px;
-    margin-bottom: 110px;
+    padding: 0px 50px 150px;
+    margin-bottom: 150px;
     margin-top: -40px;
 }
 
@@ -147,6 +148,10 @@ main {
     background-color: rgba(255, 229, 229, 0.7);
 }
 
+.curso4 {
+    background-color: rgba(217, 255, 242, 0.7);
+}
+
 .curso {
     border-radius: 20px;
     display: flex;
@@ -160,24 +165,41 @@ main {
     height: 670px;
 }
 
-.curso .div-txt {
+.film {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 25px;
+    text-align: center;
+    width: 700px;
+    height: 600px;
+}
+
+.curso .div-txt,
+.film .div-txt {
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
+    text-align: center;
 }
 
-.curso ul {
+.curso ul,
+.film ul {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     list-style: none;
-    text-align: left;
+    text-align: center;
 }
 
-.curso span {
+.curso span,
+.film span {
     font-weight: 900;
 }
 
@@ -190,7 +212,7 @@ main {
     gap: 100px;
     text-align: center;
     text-decoration: none;
-    padding: 50px 100px 50px;
+    padding: 100px 100px 50px;
     margin-bottom: 110px;
 }
 
@@ -476,12 +498,19 @@ textarea {
     transition: all 1s;
 }
 
-.main-cursos :nth-child(2) {
+.main-cursos :nth-child(2),
+.main-film :nth-child(2) {
     transition-delay: 400ms;
 }
 
-.main-cursos :nth-child(3) {
+.main-cursos :nth-child(3),
+.main-film :nth-child(3) {
     transition-delay: 700ms;
+}
+
+.main-cursos :nth-child(4),
+.main-film :nth-child(4) {
+    transition-delay: 1000ms;
 }
 
 .main :nth-child(2) {
@@ -551,13 +580,18 @@ textarea {
         width: 95%;
     }
 
-    .main-cursos {
+    .main-cursos,
+    .main-film {
         gap: 20px;
         align-items: self-start;
         margin-top: 20px;
     }
 
     .curso {
+        height: auto;
+    }
+
+    .film {
         height: auto;
     }
 
@@ -789,6 +823,10 @@ textarea {
     }
 
     .main-cursos :nth-child(3) {
+        transition-delay: 0ms;
+    }
+
+    .main-cursos :nth-child(4) {
         transition-delay: 0ms;
     }
 
