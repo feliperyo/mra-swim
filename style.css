@@ -708,14 +708,16 @@ textarea {
         margin-bottom: -10px;
     }
 
-    .main-cursos {
+    .main-cursos,
+    .main-film {
         flex-direction: column;
         gap: 50px;
         align-items: center;
         margin-top: 100px;
     }
 
-    .curso {
+    .curso,
+    .film {
         width: 700px;
     }
 
@@ -818,15 +820,18 @@ textarea {
         top: 35%;
     }
 
-    .main-cursos :nth-child(2) {
+    .main-cursos :nth-child(2),
+    .main-film :nth-child(2) {
         transition-delay: 0ms;
     }
 
-    .main-cursos :nth-child(3) {
+    .main-cursos :nth-child(3),
+    .main-film :nth-child(3) {
         transition-delay: 0ms;
     }
 
-    .main-cursos :nth-child(4) {
+    .main-cursos :nth-child(4),
+    .main-film :nth-child(4) {
         transition-delay: 0ms;
     }
 
@@ -869,7 +874,8 @@ textarea {
         margin-top: 75px;
     }
 
-    .curso {
+    .curso,
+    .film {
         width: 375px;
     }
 
