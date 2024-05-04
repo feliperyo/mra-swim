@@ -122,8 +122,7 @@ main {
     position: relative;
 }
 
-.main-cursos,
-.main-film {
+.main-cursos {
     display: flex;
     width: 100%;
     min-height: 60vh;
@@ -134,6 +133,19 @@ main {
     padding: 0px 50px 150px;
     margin-bottom: 150px;
     margin-top: -40px;
+}
+
+.main-film {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 50% 50%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin-left: 9%;
+    margin-bottom: 150px;
+    margin-top: -40px;
+    padding: 0px 30px 150px;
 }
 
 .curso1 {
@@ -174,8 +186,8 @@ main {
     padding: 30px;
     gap: 25px;
     text-align: center;
-    width: 700px;
-    height: 600px;
+    width: 80%;
+    height: 500px;
 }
 
 .curso .div-txt,
@@ -236,8 +248,16 @@ main {
     position: relative;
 }
 
-.link-filmagem .nados {
+.nados {
     width: 200px;
+}
+
+.saidas {
+    width: 100px;
+}
+
+.viradas {
+    width: 80px;
 }
 
 .link-aula {
@@ -503,14 +523,12 @@ textarea {
     transition-delay: 400ms;
 }
 
-.main-cursos :nth-child(3),
-.main-film :nth-child(3) {
+.main-cursos :nth-child(3) {
     transition-delay: 700ms;
 }
 
-.main-cursos :nth-child(4),
 .main-film :nth-child(4) {
-    transition-delay: 1000ms;
+    transition-delay: 400ms;
 }
 
 .main :nth-child(2) {
@@ -710,10 +728,15 @@ textarea {
 
     .main-cursos,
     .main-film {
+        display: flex;
         flex-direction: column;
         gap: 50px;
         align-items: center;
         margin-top: 100px;
+    }
+
+    .main-film {
+        margin-left: 5%;
     }
 
     .curso,
