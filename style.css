@@ -190,8 +190,22 @@ main {
     height: 500px;
 }
 
+.aulas {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 25px;
+    text-align: center;
+    width: 80%;
+    height: 675px;
+}
+
 .curso .div-txt,
-.film .div-txt {
+.film .div-txt,
+.aulas .div-txt {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -200,7 +214,8 @@ main {
 }
 
 .curso ul,
-.film ul {
+.film ul,
+.aulas ul {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -211,7 +226,8 @@ main {
 }
 
 .curso span,
-.film span {
+.film span,
+.aulas span {
     font-weight: 900;
 }
 
@@ -613,6 +629,10 @@ textarea {
         height: auto;
     }
 
+    .aulas {
+        height: auto;
+    }
+
     .main {
         gap: 15px;
     }
@@ -740,7 +760,8 @@ textarea {
     }
 
     .curso,
-    .film {
+    .film,
+    .aulas {
         width: 700px;
     }
 
@@ -898,7 +919,8 @@ textarea {
     }
 
     .curso,
-    .film {
+    .film,
+    .aulas {
         width: 375px;
     }
 
