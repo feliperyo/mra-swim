@@ -174,7 +174,7 @@ main {
     gap: 25px;
     text-align: center;
     width: 800px;
-    height: 700px;
+    height: 850px;
 }
 
 .film {
@@ -187,7 +187,7 @@ main {
     gap: 25px;
     text-align: center;
     width: 80%;
-    height: 500px;
+    height: 600px;
 }
 
 .aulas {
@@ -200,7 +200,7 @@ main {
     gap: 25px;
     text-align: center;
     width: 80%;
-    height: 775px;
+    height: 925px;
 }
 
 .curso .div-txt,
@@ -223,6 +223,14 @@ main {
     flex-direction: column;
     list-style: none;
     text-align: center;
+}
+
+p {
+    line-height: 25px;
+}
+
+li {
+    line-height: 25px;
 }
 
 .curso span,
