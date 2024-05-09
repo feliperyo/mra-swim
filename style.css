@@ -29,7 +29,7 @@ body {
 
 header {
     padding: 20px;
-    background-image: url('./assets/bg-header.png');
+    background-image: url('./assets/bg-header.webp');
     background-size: 100vw 30vh;
     background-repeat: no-repeat;
     display: flex;
@@ -99,7 +99,7 @@ nav .nav-left a:active {
     height: 120px;
     margin-top: 50px;
     border-radius: 50%;
-    background-image: url('./assets/MRA2024.jpg');
+    background-image: url('./assets/MRA2024.webp');
     background-size: cover;
     cursor: pointer;
     box-shadow: 2px 2px 10px black;
