@@ -4,90 +4,1550 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="shortcut icon" href="./assets/favicon-16x16.png" type="image/png">
+    <title>MRA Natação - Inovação em Natação</title>
+    <style>
+        /* Reset e variáveis CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="style.css">
-    <title>MRA Natação</title>
+        :root {
+            --primary-blue: #0066ff;
+            --secondary-blue: #0052cc;
+            --accent-cyan: #00ffff;
+            --dark-blue: #001133;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-light: #ffffff;
+            --wave-color: rgba(0, 255, 255, 0.3);
+        }
+
+        /* Body otimizado */
+        body {
+            font-family: 'Arial', sans-serif;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #001133 0%, #0066ff 50%, #00ffff 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Preloader otimizado */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #001133, #0066ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: all 0.5s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .water-loader {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ffff, #0066ff);
+            animation: waterPulse 1.5s ease-in-out infinite;
+        }
+
+        /* Background animado otimizado */
+        .water-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .water-wave {
+            position: absolute;
+            width: 200%;
+            height: 150px;
+            background: linear-gradient(90deg, transparent, var(--wave-color), transparent);
+            border-radius: 50%;
+            animation: wave 8s linear infinite;
+        }
+
+        .water-wave:nth-child(1) {
+            top: 10%;
+            animation-delay: 0s;
+        }
+
+        .water-wave:nth-child(2) {
+            top: 30%;
+            animation-delay: -2s;
+            opacity: 0.7;
+        }
+
+        .water-wave:nth-child(3) {
+            top: 50%;
+            animation-delay: -4s;
+            opacity: 0.5;
+        }
+
+        .water-wave:nth-child(4) {
+            top: 70%;
+            animation-delay: -6s;
+            opacity: 0.3;
+        }
+
+        .bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.4), rgba(0, 102, 255, 0.2));
+            border-radius: 50%;
+            animation: bubbleFloat 10s linear infinite;
+        }
+
+        /* Header otimizado */
+        header {
+            position: sticky;
+            top: 0;
+            padding: 20px 0;
+            background: linear-gradient(135deg,
+                    rgba(0, 17, 51, 0.95) 0%,
+                    rgba(0, 102, 255, 0.85) 50%,
+                    rgba(0, 255, 255, 0.75) 100%);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-left a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-left a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-left a:hover::before,
+        .nav-left a.active::before {
+            left: 100%;
+        }
+
+        .nav-left a:hover,
+        .nav-left a.active {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+            background: linear-gradient(145deg, rgba(0, 255, 255, 0.2), rgba(0, 102, 255, 0.15));
+            border-color: rgba(0, 255, 255, 0.5);
+        }
+
+        .nav-right a {
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-right a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .logo-lattes {
+            width: 35px;
+            margin-left: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .nav-right:hover .logo-lattes {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        /* Logo central com imagens originais */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .main-logo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-image: url('./assets/MRA2024.webp');
+            background-size: cover;
+            background-position: center;
+            display: block;
+            box-shadow:
+                0 0 60px rgba(0, 255, 255, 0.6),
+                0 0 120px rgba(0, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            border: 3px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .main-logo::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            animation: logoShine 4s linear infinite;
+            opacity: 0.7;
+        }
+
+        .main-logo:hover {
+            background-image: url('./assets/MRA2024.gif');
+            transform: scale(1.15) rotate(5deg);
+            box-shadow:
+                0 0 100px rgba(0, 255, 255, 0.8),
+                0 0 200px rgba(0, 255, 255, 0.4);
+            border-color: rgba(0, 255, 255, 0.8);
+        }
+
+        /* Fallback caso imagem não carregue */
+        .main-logo[style*="background-image: url('./assets/MRA2024.webp')"]::before {
+            content: 'MRA';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            display: none;
+        }
+
+        /* Seções */
+        .section {
+            display: none;
+            min-height: 60vh;
+            padding: 20px 0;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00ffff 0%, #ffffff 30%, #00ff88 60%, #00ffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            text-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Cards de serviços OTIMIZADOS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 50px;
+            margin: 50px 0;
+            perspective: 1000px;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00ffff 0%, #0066ff 25%, #ff6b6b 50%, #4ecdc4 75%, #00ffff 100%);
+            background-size: 300% 100%;
+            animation: rainbowFlow 3s ease-in-out infinite;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(0, 255, 255, 0.12));
+        }
+
+        .service-card h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #00ffff 0%, #ffffff 50%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover h1 {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .service-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.85;
+            color: #4ecdc4;
+        }
+
+        .service-card p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.7;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover p {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        /* IMAGENS SEM CORTE - CORRIGIDO */
+        .service-image {
+            width: 100%;
+            height: auto;
+            min-height: 180px;
+            max-height: 250px;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 15px;
+            margin-top: 25px;
+            transition: all 0.5s ease;
+            filter: brightness(0.9) saturate(1.1);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .service-card:hover .service-image {
+            filter: brightness(1.1) saturate(1.3);
+            transform: scale(1.02);
+            border-color: rgba(0, 255, 255, 0.3);
+        }
+
+        /* Botões otimizados */
+        .futuristic-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #0066ff 0%, #00ffff 50%, #0066ff 100%);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            margin: 15px;
+            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
+        }
+
+        .futuristic-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .futuristic-btn:hover::before {
+            left: 100%;
+        }
+
+        .futuristic-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
+            background: linear-gradient(135deg, #00ffff 0%, #0066ff 50%, #00ffff 100%);
+        }
+
+        /* Cards de conteúdo otimizados */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .content-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 40px;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ffff 0%, #0066ff 50%, #00ffff 100%);
+            background-size: 200% 100%;
+            animation: borderFlow 2s ease-in-out infinite;
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(0, 255, 255, 0.08));
+        }
+
+        .content-card h2 {
+            color: #00ffff;
+            margin-bottom: 25px;
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+
+        .content-card h3 {
+            margin-bottom: 20px;
+            opacity: 0.95;
+            color: #4ecdc4;
+        }
+
+        .content-card h4 {
+            color: #00ffff;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .content-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .content-list li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .content-list li::before {
+            content: '▸';
+            color: #00ffff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .content-list li:hover {
+            transform: translateX(5px);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .content-list li:hover::before {
+            color: #4ecdc4;
+            transform: scale(1.2);
+        }
+
+        .highlight {
+            color: #00ffff;
+            font-weight: 600;
+        }
+
+        .format-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0066ff 0%, #00ffff 50%, #0066ff 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Footer otimizado */
+        footer {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) rotate(360deg);
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+        }
+
+        .social-links img {
+            width: 25px;
+            height: 25px;
+        }
+
+        /* Modal otimizado */
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 17, 51, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .form-modal {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 450px;
+            width: 90%;
+            animation: modalSlideIn 0.4s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .form-modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ffff 0%, #0066ff 25%, #ff6b6b 50%, #4ecdc4 75%, #00ffff 100%);
+            background-size: 300% 100%;
+            animation: rainbowFlow 3s ease-in-out infinite;
+        }
+
+        .form-modal input,
+        .form-modal textarea,
+        .form-modal select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-modal input:focus,
+        .form-modal textarea:focus,
+        .form-modal select:focus {
+            border-color: rgba(0, 255, 255, 0.5);
+            background: linear-gradient(145deg, rgba(0, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            transform: translateY(-2px);
+        }
+
+        .form-modal input::placeholder,
+        .form-modal textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #ff6b6b;
+            transform: scale(1.1) rotate(90deg);
+            background: linear-gradient(145deg, rgba(255, 107, 107, 0.2), rgba(255, 255, 255, 0.05));
+        }
+
+        /* WhatsApp otimizado */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 50%, #25D366 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            z-index: 1500;
+            transition: all 0.3s ease;
+            animation: whatsappPulse 2s infinite;
+            text-decoration: none;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 45px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Responsive otimizado */
+        @media (max-width: 768px) {
+            .nav-left {
+                display: none;
+            }
+
+            nav {
+                justify-content: center;
+                padding: 0 20px;
+            }
+
+            .services-grid,
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .content-card {
+                padding: 30px 20px;
+            }
+
+            .main-logo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-card {
+                padding: 35px 25px;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .form-modal {
+                padding: 30px 25px;
+                margin: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 25px 15px;
+            }
+
+            .main-logo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* Animações otimizadas */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes waterPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        @keyframes bubbleFloat {
+            0% {
+                bottom: -100px;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+                transform: translateX(100px) rotate(360deg);
+            }
+        }
+
+        @keyframes logoShine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        @keyframes rainbowFlow {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes borderFlow {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: scale(0.8) translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes whatsappPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+            }
+        }
+    </style>
 </head>
 
 <body>
-
+    <!-- Preloader -->
     <div class="preloader">
-        <video autoplay muted src="./assets/preloader-video.mp4"></video>
+        <div class="water-loader"></div>
     </div>
 
+    <!-- Background animado -->
+    <div class="water-background">
+        <div class="water-wave"></div>
+        <div class="water-wave"></div>
+        <div class="water-wave"></div>
+        <div class="water-wave"></div>
+    </div>
+
+    <!-- Bolhas -->
+    <div class="bubbles" id="bubbles"></div>
+
+    <!-- Header -->
     <header>
         <nav>
             <div class="nav-left">
-                <a id="home" href="./index.html">Home</a>
-                <a id="curso" href="./curso.html">Curso</a>
-                <a id="filmagem" href="./filmagem.html">Filmagem e Análise</a>
-                <a id="aulas" href="./aulas.html">Aulas e Treinos</a>
+                <a onclick="showSection('home')" class="nav-link active">Home</a>
+                <a onclick="showSection('cursos')" class="nav-link">Cursos</a>
+                <a onclick="showSection('filmagem')" class="nav-link">Análises</a>
+                <a onclick="showSection('aulas')" class="nav-link">Treinos</a>
             </div>
             <div class="nav-right">
-                <a href="http://lattes.cnpq.br/6604107729126041" target="_blank">Prof. Dr. Marcos Apolinário “Marcão”
+                <a href="http://lattes.cnpq.br/6604107729126041" target="_blank">
+                    Prof. Dr. Marcos Apolinário "Marcão"
                     <img class="logo-lattes"
                         src="https://ceara.fiocruz.br/portal/wp-content/uploads/2021/06/path45-2.png" alt="logo-lattes">
                 </a>
             </div>
         </nav>
-
-        <a class="a-logo-header" href="./index.html"></a>
     </header>
 
-    <div class="main">
-        <section class="link-curso hidden">
-            <h1>Cursos de capacitação</h1>
-            <h2>Formativa ➢ Competitiva</h2>
-            <h3>A Teoria na Prática</h3>
-            <div class="box-btn"><a class="a-btn" href="./curso.html">
-                    Saiba Mais
-                </a></div>
-            <img class="bg-img" alt="Marcos dando treino" src="./assets/container-img.webp">
-        </section>
-        <section class="link-filmagem hidden">
-            <h1>Filmagens / Análises</h1>
-            <h2>Veltest ➢ IdC ➢ IdR</h2>
-            <p><img class="nados" src="./assets/nados.webp" unselectable="on"></p>
-            <div class="box-btn"><a class="a-btn" href="./filmagem.html">
-                    Saiba Mais
-                </a></div>
-            <img class="bg-img" alt="atleta nadando" src="./assets/filmagem-img.webp">
-            <a class="btn-awr" href="https://www.instagram.com/arwswim/"><img class="logo-arw"
-                    src="./assets/logo-arw-img.webp"></a>
-        </section>
-        <section class="link-aula hidden">
-            <h1>Aulas / Treinos</h1>
-            <h2>Formativa ➢ Competitiva</h2>
-            <h3>Personalizados</h3>
-            <div class="box-btn"><a class="a-btn" href="./aulas.html">
-                    Saiba Mais
-                </a></div>
-            <img class="bg-img" alt="turma de atletas com Marcos" src="./assets/aulas-img.webp">
-            <a class="btn-awr" href="https://www.instagram.com/arwswim/"><img class="logo-arw"
-                    src="./assets/logo-arw-img.webp"></a>
-        </section>
+    <!-- Logo central -->
+    <div class="logo-container">
+        <div class="main-logo" onclick="showSection('home')"></div>
     </div>
 
-    <footer>
-        <div class="share">
-            <a href="https://www.instagram.com/marcao_apolinario/" title="Abrir Instagram de Marcos"
-                target="_blank"><img width="35" height="35"
-                    src="https://img.icons8.com/ios/50/ffffff/instagram-new--v1.png" alt="instagram-new--v1" /></a>
-            <a href="https://www.youtube.com/@mranatacao" title="Abrir Youtube de Marcos" target="_blank"><img
-                    width="35" height="35" src="https://img.icons8.com/ios/50/ffffff/youtube-squared.png"
-                    alt="youtube-squared" /></a>
-        </div>
+    <!-- Seção Home -->
+    <section id="home" class="section active">
+        <div class="main-content">
+            <div class="services-grid">
+                <div class="service-card">
+                    <h1>Cursos de Capacitação</h1>
+                    <h2>Formativa ➢ Competitiva</h2>
+                    <h3>A Teoria na Prática</h3>
+                    <p>Cursos práticos sobre adaptação ao meio aquático, técnicas dos 4 nados, saídas e viradas. Aprenda
+                        metodologias inovadoras com mais de 30 anos de experiência.</p>
+                    <button onclick="showSection('cursos')" class="futuristic-btn">Saiba Mais</button>
+                    <img class="service-image" src="./assets/container-img.webp" alt="Marcos dando treino">
+                </div>
 
-        <p>© 2024 MRA Natação - CNPJ: 19.669.445.0001-97</p>
+                <div class="service-card">
+                    <h1>Filmagens / Análises</h1>
+                    <h2>Veltest ➢ IdC ➢ IdR</h2>
+                    <h3>Tecnologia Biomecânica</h3>
+                    <p>Análises avançadas de velocidade, coordenação e respiração com filmagem aérea e aquática.
+                        Relatórios técnicos para otimização da performance.</p>
+                    <button onclick="showSection('filmagem')" class="futuristic-btn">Descobrir</button>
+                    <img class="service-image" src="./assets/filmagem-img.webp" alt="atleta nadando">
+                </div>
+
+                <div class="service-card">
+                    <h1>Aulas / Treinos</h1>
+                    <h2>Formativa ➢ Competitiva</h2>
+                    <h3>Personalizados</h3>
+                    <p>Aulas e treinos individualizados para todas as idades e níveis. Do iniciante ao atleta de alto
+                        rendimento, com metodologia exclusiva.</p>
+                    <button onclick="showSection('aulas')" class="futuristic-btn">Começar</button>
+                    <img class="service-image" src="./assets/aulas-img.webp" alt="turma de atletas com Marcos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Cursos -->
+    <section id="cursos" class="section">
+        <div class="main-content">
+            <div class="page-header">
+                <h1>Cursos de Capacitação</h1>
+                <p>Formação profissional com mais de 30 anos de experiência em natação</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h2>CURSO 1 - Adaptação ao Meio Aquático "AMA"</h2>
+                    <div class="format-badge">Presencial 100% Prático</div>
+
+                    <p>Neste curso você aprenderá um novo método (dividido em 5 etapas) do processo de desenvolvimento
+                        da adaptação ao meio aquático.</p>
+
+                    <p><strong>Duração do curso:</strong> de 4 a 5 horas</p>
+
+                    <h4>O curso será dividido em 5 etapas de desenvolvimento:</h4>
+                    <ul class="content-list">
+                        <li>Adaptação vertical</li>
+                        <li>Combinações verticais</li>
+                        <li>Adaptação horizontal</li>
+                        <li>Deslocamentos e giros</li>
+                        <li>Combinações verticais/horizontais e auto-salvamento</li>
+                    </ul>
+                    <p class="highlight">➢ Avaliação e critérios para introdução dos nados.</p>
+
+                    <h4>Materiais utilizados:</h4>
+                    <p>Maiô ou sunga, touca, óculos, clip nasal.</p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('curso1')" class="futuristic-btn">Agendar Curso</button>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>CURSO 2 - Nados, Saídas e Viradas</h2>
+                    <div class="format-badge">Presencial 100% Prático</div>
+
+                    <p>Curso sobre as 6 etapas do processo de ensino, aprendizagem e desenvolvimento dos nados
+                        borboleta, costas, peito e crawl, saídas e viradas (do iniciante ao atleta de rendimento).</p>
+
+                    <p><strong>Duração do curso:</strong> de 4 a 5 horas</p>
+
+                    <h4>Conteúdo:</h4>
+                    <ul class="content-list">
+                        <li>Habilidades critério para introdução dos 4 nados</li>
+                        <li>Processo de formação em 6 etapas</li>
+                        <li>Referências técnicas básicas e específicas</li>
+                        <li>Referências de coordenação para aulas, treinos e competições</li>
+                        <li>Habilidades combinadas, complementares e exploratórias</li>
+                    </ul>
+                    <p class="highlight">➢ Estratégias básicas e específicas utilizadas nas diferentes
+                        distâncias/provas.</p>
+
+                    <h4>Materiais utilizados:</h4>
+                    <p>Maiô ou sunga, touca, óculos, clip nasal.</p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('curso2')" class="futuristic-btn">Agendar Curso</button>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>CURSO 3 - Filmagem e Análise Biomecânica</h2>
+                    <div class="format-badge">Presencial "Teórico e Prático"</div>
+
+                    <p>A filmagem é uma excelente estratégia/ferramenta indispensável e complementar em todo processo de
+                        ensino para professores, treinadores, biomecânicos e pesquisadores.</p>
+
+                    <p><strong>Duração do curso:</strong> de 6 a 8 horas</p>
+
+                    <h4>Conteúdo:</h4>
+                    <ul class="content-list">
+                        <li>Materiais e câmeras para as filmagens aérea e aquática</li>
+                        <li>Aplicativos e softwares para edição e análises</li>
+                        <li>Análises básicas de velocidade média, frequência, comprimento de braçadas</li>
+                        <li>Análises do Índice de respiração do nado crawl</li>
+                        <li>Análise do Índice de coordenação dos 4 nados</li>
+                    </ul>
+                    <p class="highlight">➢ Interpretação e aplicação em treinos e estratégias de competição.</p>
+
+                    <h4>Materiais utilizados:</h4>
+                    <p>Notebook, cronômetro, celular, bastão selfie e câmera de ação (para filmagens e análise).</p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('curso3')" class="futuristic-btn">Agendar Curso</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Filmagem -->
+    <section id="filmagem" class="section">
+        <div class="main-content">
+            <div class="page-header">
+                <h1>Filmagens & Análises Biomecânicas</h1>
+                <p>Tecnologia avançada para otimização da performance aquática</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h2>1ª Filmagem ➢ Aérea e Aquática</h2>
+
+                    <p><strong>Destinado à:</strong><br>
+                        <strong>Alunos</strong> (diferentes níveis de habilidade)<br>
+                        <strong>Atletas</strong> (categorias: mirim a master)<br>
+                        Nível estadual, nacional e internacional
+                    </p>
+
+                    <p>A filmagem aérea e aquática pode ser realizada em 3 ângulos de visão "Lateral, Frontal e
+                        Superior", nas distâncias de 25 a 50 metros e dos nados crawl, costas, peito, borboleta, saídas
+                        e viradas.</p>
+
+                    <h4>OBJETIVOS:</h4>
+                    <p>Fornecer aos professores e treinadores as filmagens de diferentes ângulos dos seus alunos/atletas
+                        <span class="highlight">para futuras análises e intervenção do processo</span> de
+                        ensino➢aprendizagem➢desenvolvimento dos nados, saídas, viradas e chegadas.</p>
+
+                    <p class="highlight"><strong>INCLUSO: filmagens editadas</strong></p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('filmagem1')" class="futuristic-btn">Agendar Filmagem</button>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>2ª Filmagem ➢ Análise Veltest</h2>
+                    <p style="font-style: italic;">(teste de velocidade média de sua prova)</p>
+
+                    <h4>VELTEST</h4>
+                    <p>É um teste básico de velocidade média (m/s) analisados a cada 5m. Nesse teste vamos mapear a
+                        velocidade média (saídas, nado puro, aproximação de virada, saída de virada e aproximação de
+                        chegada) durante a prova ou parcial da prova (50 a 100 metros).</p>
+
+                    <h4>OBJETIVOS:</h4>
+                    <ul class="content-list">
+                        <li>Visualizar/analisar a técnica de nado com base na velocidade média dos nadadores</li>
+                        <li>Realizar ajustes técnicos para aumentar a velocidade média e aplicar durante os treinos e
+                            estratégias de nado/prova em competições</li>
+                    </ul>
+
+                    <p class="highlight"><strong>INCLUSO: filmagens editadas e um relatório gráfico em PDF de suas
+                            análises</strong></p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('veltest')" class="futuristic-btn">Solicitar Veltest</button>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>3ª Filmagem ➢ IdC</h2>
+                    <p>O <span class="highlight">Índice de Coordenação (IdC)</span> é uma medida que analisa a ação
+                        propulsiva entre os braços dos nados Crawl e Costas e, entre braços e pernas dos nados Peito e
+                        Borboleta.</p>
+
+                    <h4>OBJETIVOS:</h4>
+                    <ul class="content-list">
+                        <li>Identificar/analisar as ações propulsivas entre os braços, braços e pernas dos nadadores
+                        </li>
+                        <li>Realizar ajustes técnicos <span class="highlight">para aumentar a ação propulsiva</span> dos
+                            nadadores e aplicar em treinos e competições</li>
+                    </ul>
+
+                    <h4><span class="highlight">Será realizado em três etapas:</span></h4>
+                    <ul class="content-list">
+                        <li>1ª Etapa: Filmagem aérea e aquática (in loco)</li>
+                        <li>2ª Etapa: Edição e Análise biomecânica (homework)</li>
+                        <li>3ª Etapa: Apresentação dos resultados em PDF (in loco)</li>
+                    </ul>
+
+                    <p class="highlight"><strong>INCLUSO: filmagens editadas e um relatório gráfico em PDF de suas
+                            análises</strong></p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('idc')" class="futuristic-btn">Solicitar IdC</button>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>4ª Filmagem ➢ IdR</h2>
+                    <p>O <span class="highlight">Índice de Respiração (IdR)</span> é uma medida que analisa o tempo de
+                        atraso entre a respiração e a braçada do nado crawl. Resultando em 4 Padrões de coordenação:
+                        <span class="highlight">Super atrasado, Atrasado, Simultâneo e Antecipado.</span></p>
+
+                    <h4>OBJETIVOS:</h4>
+                    <p>Analisar/identificar o padrão respiratório dos nadadores, realizar ajustes técnicos <span
+                            class="highlight">para reduzir o tempo de atraso</span> da inspiração e aplicar em treinos e
+                        competições.</p>
+
+                    <h4><span class="highlight">Será realizado em três etapas:</span></h4>
+                    <ul class="content-list">
+                        <li>1ª Etapa: Filmagem aérea e aquática (in loco)</li>
+                        <li>2ª Etapa: Edição e Análise biomecânica (homework)</li>
+                        <li>3ª Etapa: Apresentação dos resultados em PDF (in loco)</li>
+                    </ul>
+
+                    <p class="highlight"><strong>INCLUSO: filmagens editadas e um relatório gráfico em PDF de suas
+                            análises.</strong></p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('idr')" class="futuristic-btn">Solicitar IdR</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vídeo demonstrativo -->
+            <div style="text-align: center; margin: 80px 0;">
+                <h3 style="color: #00ffff; font-size: 2rem; margin-bottom: 30px;">Demonstração das Análises</h3>
+                <div
+                    style="max-width: 800px; margin: 0 auto; position: relative; aspect-ratio: 16/9; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+                    <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/fpK2leMPT7U?si=LTgk3ibnTte7eQzt&amp;start=7"
+                        title="Demonstração das análises biomecânicas" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Aulas -->
+    <section id="aulas" class="section">
+        <div class="main-content">
+            <div class="page-header">
+                <h1>Aulas & Treinos Personalizados</h1>
+                <p>Mais de 30 anos de experiência em natação formativa e competitiva</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h2>Natação Formativa</h2>
+                    <div class="format-badge">Presencial 100% Prática</div>
+
+                    <p><strong>Aulas de natação:</strong> (a partir dos 9 anos de idade)</p>
+                    <p><strong>Destinado a:</strong> nadadores em processo inicial de aprendizagem e/ou aperfeiçoamento
+                        em natação</p>
+                    <p><strong>Duração:</strong> entre 50 e 90 minutos</p>
+
+                    <h4>OBJETIVOS:</h4>
+                    <ul class="content-list">
+                        <li>Ensinar todo processo de aprendizagem e desenvolvimento em natação formativa</li>
+                        <li>Desenvolver o processo de aprendizagem para nadadores com experiência em natação formativa
+                        </li>
+                        <li>Iniciar o processo de formação de atletas de base</li>
+                    </ul>
+
+                    <h4>Conteúdo:</h4>
+                    <ul class="content-list">
+                        <li>Adaptação ao Meio Aquático e Auto-Salvamento</li>
+                        <li>Habilidades complementares, combinadas e exploratórias</li>
+                        <li>Processo de aprendizagem dos 4 nados, saídas e viradas</li>
+                        <li>Processo de aprendizagem do Medley</li>
+                        <li>Noções básicas de águas abertas, polo aquático, nado sincronizado</li>
+                        <li>Introdução ao treinamento de natação</li>
+                        <li>Noções básicas de competição</li>
+                        <li>Filmagem e análise do processo de aprendizagem</li>
+                    </ul>
+
+                    <h4>Materiais utilizados:</h4>
+                    <p><strong>Básicos:</strong> Maiô ou sunga, touca, óculos, roupão, toalha</p>
+                    <p><strong>Extra:</strong> clip nasal, prancha, flutuador, snorkel frontal, palmar</p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('formativa')" class="futuristic-btn">Agendar Aulas</button>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>Natação Competitiva</h2>
+                    <div class="format-badge">Presencial 100% Prática</div>
+
+                    <p><strong>Treino de natação:</strong> (categorias de mirim a master)</p>
+                    <p><strong>Destinado a:</strong> atletas de nível municipal, estadual, nacional e internacional</p>
+                    <p><strong>Duração:</strong> entre 90 e 120 minutos</p>
+
+                    <h4>OBJETIVOS:</h4>
+                    <ul class="content-list">
+                        <li>Iniciar o processo de formação de atletas de rendimento</li>
+                        <li>Formar atletas de natação para equipes do estado de São Paulo e/ou outros estados</li>
+                        <li>Preparar atletas de nível estadual, nacional e internacional para competições de piscina e
+                            águas abertas</li>
+                    </ul>
+
+                    <h4>Conteúdo:</h4>
+                    <ul class="content-list">
+                        <li>Planejamento específico e individualizado a longo prazo</li>
+                        <li>Processo de formação dos 4 nados, saídas e viradas</li>
+                        <li>Habilidades complementares, combinadas e exploratórias</li>
+                        <li>Introdução e desenvolvimento das provas dos 4 nados e Medley</li>
+                        <li>Noções básicas de águas abertas, polo aquático, nado sincronizado</li>
+                        <li>Introdução e desenvolvimento do treinamento de natação</li>
+                        <li>Introdução de estratégias de prova para competição</li>
+                        <li>Orientações de saúde e nutricional</li>
+                        <li>Filmagem e análise Biomecânica específicas dos nados e provas</li>
+                    </ul>
+
+                    <h4>Materiais utilizados:</h4>
+                    <p><strong>Básicos:</strong> Maiô ou sunga, touca, óculos, roupão, toalha</p>
+                    <p><strong>Extra 1:</strong> clip nasal, prancha, flutuador, snorkel frontal, palmar</p>
+                    <p><strong>Extra 2:</strong> corda, extensor de condicionamento físico</p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openForm('competitiva')" class="futuristic-btn">Agendar Treinos</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diferenciais -->
+            <div style="text-align: center; margin: 80px 0;">
+                <h3 style="color: #00ffff; font-size: 2.5rem; margin-bottom: 50px;">Nossos Diferenciais</h3>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                    <div class="differential-item"
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">🏊‍♂️</div>
+                        <h4 style="color: #00ffff; margin-bottom: 15px;">Metodologia Exclusiva</h4>
+                        <p>Método desenvolvido ao longo de 30+ anos de experiência</p>
+                    </div>
+                    <div class="differential-item"
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">📹</div>
+                        <h4 style="color: #00ffff; margin-bottom: 15px;">Análise por Vídeo</h4>
+                        <p>Filmagens e análises técnicas para evolução acelerada</p>
+                    </div>
+                    <div class="differential-item"
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">🎯</div>
+                        <h4 style="color: #00ffff; margin-bottom: 15px;">Treinamento Personalizado</h4>
+                        <p>Programas individualizados conforme objetivos e nível</p>
+                    </div>
+                    <div class="differential-item"
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">🏆</div>
+                        <h4 style="color: #00ffff; margin-bottom: 15px;">Resultados Comprovados</h4>
+                        <p>Atletas formados em níveis estadual, nacional e internacional</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagem da equipe -->
+            <div
+                style="position: relative; margin: 80px 0; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+                <img src="./assets/aulas-img.webp" alt="Equipe MRA Natação"
+                    style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div
+                    style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(0, 17, 51, 0.7), rgba(0, 255, 255, 0.3)); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 40px;">
+                    <h3 style="font-size: 2.5rem; margin-bottom: 15px; color: #00ffff;">Faça Parte da Nossa Equipe</h3>
+                    <p style="font-size: 1.2rem; opacity: 0.9;">Junte-se aos nadadores que já transformaram sua
+                        performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/marcao_apolinario/" target="_blank">
+                <img src="https://img.icons8.com/ios/50/ffffff/instagram-new--v1.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@mranatacao" target="_blank">
+                <img src="https://img.icons8.com/ios/50/ffffff/youtube-squared.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/arwswim/" target="_blank">
+                <img src="./assets/logo-arw-img.webp" alt="ARW Swim" style="border-radius: 50%;">
+            </a>
+        </div>
+        <p>© 2024 MRA Natação - CNPJ: 19.669.445.0001-97 | Inovação em Natação</p>
     </footer>
 
-    <div class="video-bg">
-        <video src="./assets/video-bg.mp4" alt="video de fundo" autoplay muted loop></video>
+    <!-- Modal -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="form-modal">
+            <button class="close-btn" onclick="closeForm()">&times;</button>
+            <h2 id="formTitle" style="color: white; margin-bottom: 20px;">Entre em Contato</h2>
+            <form action="https://formcarry.com/s/eR2DXm4xSg1" method="POST">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <input type="tel" name="telefone" placeholder="Seu Celular" required>
+                <input type="hidden" name="servico" id="servicoInput">
+                <textarea name="mensagem" placeholder="Conte-nos sobre seus objetivos e necessidades..."
+                    rows="4"></textarea>
+                <button type="submit" class="futuristic-btn">Enviar Mensagem</button>
+            </form>
+        </div>
     </div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5511942314022" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        <img width="30" height="30" src="https://img.icons8.com/ios/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
+    </a>
+
+    <script>
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', initializeWebsite);
+
+        function initializeWebsite() {
+            removePreloader();
+            createBubbles();
+            initializeParallax();
+            addHoverEffects();
+        }
+
+        // Preloader
+        function removePreloader() {
+            setTimeout(() => {
+                const preloader = document.querySelector('.preloader');
+                if (preloader) {
+                    preloader.classList.add('hidden');
+                    setTimeout(() => preloader.style.display = 'none', 500);
+                }
+            }, 2000);
+        }
+
+        // Bolhas
+        function createBubbles() {
+            const container = document.getElementById('bubbles');
+            if (!container) return;
+
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.width = bubble.style.height = Math.random() * 20 + 10 + 'px';
+                bubble.style.animationDelay = Math.random() * 10 + 's';
+                bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                container.appendChild(bubble);
+            }
+
+            setInterval(() => {
+                if (container.children.length < 10) createSingleBubble(container);
+            }, 3000);
+        }
+
+        function createSingleBubble(container) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.left = Math.random() * 100 + '%';
+            bubble.style.width = bubble.style.height = Math.random() * 15 + 8 + 'px';
+            bubble.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            container.appendChild(bubble);
+
+            setTimeout(() => {
+                if (bubble.parentNode) bubble.parentNode.removeChild(bubble);
+            }, 10000);
+        }
+
+        // Parallax
+        function initializeParallax() {
+            let ticking = false;
+
+            function updateWaves() {
+                const scrolled = window.pageYOffset;
+                const waves = document.querySelectorAll('.water-wave');
+
+                waves.forEach((wave, index) => {
+                    const speed = 0.3 + (index * 0.1);
+                    const rotation = scrolled * 0.02;
+                    wave.style.transform = `translateX(-50%) translateY(${scrolled * speed}px) rotate(${rotation}deg)`;
+                });
+
+                ticking = false;
+            }
+
+            function requestWaveUpdate() {
+                if (!ticking) {
+                    requestAnimationFrame(updateWaves);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestWaveUpdate);
+        }
+
+        // Navegação
+        function showSection(sectionName) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const targetSection = document.getElementById(sectionName);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            const activeLink = document.querySelector(`[onclick="showSection('${sectionName}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Modal
+        function openForm(serviceType) {
+            const overlay = document.getElementById('formOverlay');
+            const title = document.getElementById('formTitle');
+            const serviceInput = document.getElementById('servicoInput');
+
+            const titles = {
+                'curso1': 'Agendar Curso 1 - AMA',
+                'curso2': 'Agendar Curso 2 - Nados',
+                'curso3': 'Agendar Curso 3 - Filmagem',
+                'filmagem1': 'Solicitar Filmagem Aérea',
+                'veltest': 'Solicitar Análise Veltest',
+                'idc': 'Solicitar Análise IdC',
+                'idr': 'Solicitar Análise IdR',
+                'formativa': 'Agendar Aulas Formativas',
+                'competitiva': 'Agendar Treinos Competitivos'
+            };
+
+            title.textContent = titles[serviceType] || 'Entre em Contato';
+            serviceInput.value = serviceType || 'contato-geral';
+
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeForm() {
+            document.getElementById('formOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Eventos
+        document.getElementById('formOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'formOverlay') closeForm();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeForm();
+        });
+
+        // Hover effects para diferenciais
+        function addHoverEffects() {
+            document.querySelectorAll('.differential-item').forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.backgroundColor = 'rgba(0, 255, 255, 0.1)';
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                });
+            });
+        }
+
+        console.log('🌊 MRA Natação - Website otimizado carregado!');
+    </script>
 </body>
-<script src="./scripts.js"></script>
-<script src="preloader.js"></script>
 
 </html>
