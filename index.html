@@ -36,6 +36,7 @@
             overflow-x: hidden;
             color: var(--text-light);
             line-height: 1.6;
+            font-size: 14px;
         }
 
         /* Preloader otimizado */
@@ -59,8 +60,8 @@
         }
 
         .water-loader {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: linear-gradient(45deg, #00ffff, #0066ff);
             animation: waterPulse 1.5s ease-in-out infinite;
@@ -80,7 +81,7 @@
         .water-wave {
             position: absolute;
             width: 200%;
-            height: 150px;
+            height: 120px;
             background: linear-gradient(90deg, transparent, var(--wave-color), transparent);
             border-radius: 50%;
             animation: wave 8s linear infinite;
@@ -130,7 +131,7 @@
         header {
             position: sticky;
             top: 0;
-            padding: 20px 0;
+            padding: 15px 0;
             background: linear-gradient(135deg,
                     rgba(0, 17, 51, 0.95) 0%,
                     rgba(0, 102, 255, 0.85) 50%,
@@ -145,22 +146,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 50px;
+            padding: 0 30px;
         }
 
         .nav-left {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
 
         .nav-left a {
             color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 25px;
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.25);
@@ -168,6 +169,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            font-size: 14px;
         }
 
         .nav-left a::before {
@@ -200,10 +202,11 @@
             display: flex;
             align-items: center;
             font-weight: 500;
-            padding: 10px 15px;
-            border-radius: 20px;
+            padding: 8px 12px;
+            border-radius: 18px;
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            font-size: 13px;
         }
 
         .nav-right a:hover {
@@ -212,8 +215,8 @@
         }
 
         .logo-lattes {
-            width: 35px;
-            margin-left: 10px;
+            width: 28px;
+            margin-left: 8px;
             transition: transform 0.5s ease;
         }
 
@@ -221,24 +224,24 @@
             transform: rotate(360deg) scale(1.1);
         }
 
-        /* Logo central com imagens originais */
+        /* Logo central otimizado */
         .logo-container {
             display: flex;
             justify-content: center;
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
         .main-logo {
-            width: 180px;
-            height: 180px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             background-image: url('./assets/MRA2024.webp');
             background-size: cover;
             background-position: center;
             display: block;
             box-shadow:
-                0 0 60px rgba(0, 255, 255, 0.6),
-                0 0 120px rgba(0, 255, 255, 0.3);
+                0 0 40px rgba(0, 255, 255, 0.6),
+                0 0 80px rgba(0, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -261,33 +264,18 @@
 
         .main-logo:hover {
             background-image: url('./assets/MRA2024.gif');
-            transform: scale(1.15) rotate(5deg);
+            transform: scale(1.1) rotate(5deg);
             box-shadow:
-                0 0 100px rgba(0, 255, 255, 0.8),
-                0 0 200px rgba(0, 255, 255, 0.4);
+                0 0 60px rgba(0, 255, 255, 0.8),
+                0 0 120px rgba(0, 255, 255, 0.4);
             border-color: rgba(0, 255, 255, 0.8);
-        }
-
-        /* Fallback caso imagem não carregue */
-        .main-logo[style*="background-image: url('./assets/MRA2024.webp')"]::before {
-            content: 'MRA';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            z-index: 2;
-            display: none;
         }
 
         /* Seções */
         .section {
             display: none;
-            min-height: 60vh;
-            padding: 20px 0;
+            min-height: 50vh;
+            padding: 15px 0;
         }
 
         .section.active {
@@ -296,20 +284,20 @@
         }
 
         .main-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .page-header {
             text-align: center;
-            margin: 60px 0;
+            margin: 40px 0;
             position: relative;
         }
 
         .page-header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
             background: linear-gradient(135deg, #00ffff 0%, #ffffff 30%, #00ff88 60%, #00ffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -319,18 +307,18 @@
         }
 
         .page-header p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             opacity: 0.9;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         /* Cards de serviços OTIMIZADOS */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 50px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
             perspective: 1000px;
         }
 
@@ -338,8 +326,8 @@
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
             backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 25px;
-            padding: 40px 30px;
+            border-radius: 20px;
+            padding: 30px 25px;
             text-align: center;
             transition: all 0.5s ease;
             position: relative;
@@ -359,14 +347,14 @@
         }
 
         .service-card:hover {
-            transform: translateY(-15px) rotateX(5deg);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(0, 255, 255, 0.12));
         }
 
         .service-card h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
             background: linear-gradient(135deg, #00ffff 0%, #ffffff 50%, #00ff88 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -376,27 +364,28 @@
         }
 
         .service-card:hover h1 {
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-3px) scale(1.03);
         }
 
         .service-card h2 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
             opacity: 0.95;
         }
 
         .service-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
+            font-size: 1rem;
+            margin-bottom: 20px;
             opacity: 0.85;
             color: #4ecdc4;
         }
 
         .service-card p {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             opacity: 0.9;
-            line-height: 1.7;
+            line-height: 1.6;
             transition: all 0.3s ease;
+            font-size: 14px;
         }
 
         .service-card:hover p {
@@ -404,20 +393,20 @@
             transform: translateY(-2px);
         }
 
-        /* IMAGENS SEM CORTE - CORRIGIDO */
+        /* IMAGENS otimizadas */
         .service-image {
             width: 100%;
             height: auto;
-            min-height: 180px;
-            max-height: 250px;
+            min-height: 150px;
+            max-height: 200px;
             object-fit: contain;
             object-position: center;
-            border-radius: 15px;
-            margin-top: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
             transition: all 0.5s ease;
             filter: brightness(0.9) saturate(1.1);
             background: rgba(255, 255, 255, 0.05);
-            padding: 8px;
+            padding: 6px;
             border: 1px solid rgba(0, 255, 255, 0.1);
         }
 
@@ -430,21 +419,22 @@
         /* Botões otimizados */
         .futuristic-btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 12px 25px;
             background: linear-gradient(135deg, #0066ff 0%, #00ffff 50%, #0066ff 100%);
             color: white;
             text-decoration: none;
             border: none;
-            border-radius: 50px;
+            border-radius: 40px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
             cursor: pointer;
-            margin: 15px;
-            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
+            margin: 12px;
+            box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
+            font-size: 13px;
         }
 
         .futuristic-btn::before {
@@ -463,25 +453,25 @@
         }
 
         .futuristic-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 255, 255, 0.4);
             background: linear-gradient(135deg, #00ffff 0%, #0066ff 50%, #00ffff 100%);
         }
 
         /* Cards de conteúdo otimizados */
         .content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
         }
 
         .content-card {
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
             backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            padding: 40px;
+            border-radius: 20px;
+            padding: 30px;
             transition: all 0.5s ease;
             position: relative;
         }
@@ -499,40 +489,49 @@
         }
 
         .content-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(0, 255, 255, 0.08));
         }
 
         .content-card h2 {
             color: #00ffff;
-            margin-bottom: 25px;
-            font-size: 1.9rem;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
             font-weight: 700;
         }
 
         .content-card h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             opacity: 0.95;
             color: #4ecdc4;
+            font-size: 1.1rem;
         }
 
         .content-card h4 {
             color: #00ffff;
-            margin: 25px 0 15px 0;
+            margin: 20px 0 12px 0;
             font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .content-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .content-list {
             list-style: none;
             padding: 0;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .content-list li {
-            padding: 8px 0 8px 25px;
+            padding: 6px 0 6px 20px;
             position: relative;
             transition: all 0.2s ease;
+            font-size: 14px;
         }
 
         .content-list li::before {
@@ -545,13 +544,13 @@
         }
 
         .content-list li:hover {
-            transform: translateX(5px);
+            transform: translateX(3px);
             color: rgba(255, 255, 255, 0.95);
         }
 
         .content-list li:hover::before {
             color: #4ecdc4;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
         .highlight {
@@ -563,13 +562,155 @@
             display: inline-block;
             background: linear-gradient(135deg, #0066ff 0%, #00ffff 50%, #0066ff 100%);
             color: white;
-            padding: 10px 25px;
-            border-radius: 25px;
+            padding: 8px 20px;
+            border-radius: 20px;
             font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
+        }
+
+        /* Vídeo Instagram na seção filmagem */
+        .instagram-video-container {
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .instagram-video-container h3 {
+            color: #00ffff;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #00ffff 0%, #ffffff 50%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .instagram-video-container p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .instagram-video-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .instagram-video-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #fcb045 50%, #833ab4 75%, #fd1d1d 100%);
+            background-size: 300% 100%;
+            animation: instagramFlow 3s ease-in-out infinite;
+        }
+
+        .instagram-video-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .instagram-video-player {
+            position: relative;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .instagram-video-player video {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Overlay do Instagram */
+        .instagram-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .instagram-overlay:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.05);
+        }
+
+        .instagram-logo {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .instagram-logo::before {
+            content: "📷";
+            filter: brightness(0) invert(1);
+        }
+
+        .instagram-text {
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Indicador de click para Instagram */
+        .click-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 15;
+        }
+
+        .instagram-video-wrapper:hover .click-indicator {
+            opacity: 1;
         }
 
         /* Footer otimizado */
@@ -577,24 +718,24 @@
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             border-top: 1px solid var(--glass-border);
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 80px;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 15px;
         }
 
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
             border-radius: 50%;
@@ -603,14 +744,19 @@
         }
 
         .social-links a:hover {
-            transform: translateY(-5px) rotate(360deg);
+            transform: translateY(-3px) rotate(360deg);
             background: rgba(0, 255, 255, 0.2);
-            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
         }
 
         .social-links img {
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
+        }
+
+        footer p {
+            font-size: 13px;
+            opacity: 0.8;
         }
 
         /* Modal otimizado */
@@ -632,12 +778,12 @@
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
             backdrop-filter: blur(30px);
             border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 25px;
-            padding: 40px;
-            max-width: 450px;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
             width: 90%;
             animation: modalSlideIn 0.4s ease;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
             position: relative;
         }
 
@@ -653,18 +799,23 @@
             animation: rainbowFlow 3s ease-in-out infinite;
         }
 
+        .form-modal h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
         .form-modal input,
         .form-modal textarea,
         .form-modal select {
             width: 100%;
-            padding: 15px;
-            margin: 10px 0;
+            padding: 12px;
+            margin: 8px 0;
             border: 1px solid rgba(255, 255, 255, 0.25);
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             backdrop-filter: blur(10px);
-            border-radius: 15px;
+            border-radius: 12px;
             color: white;
-            font-size: 1rem;
+            font-size: 14px;
             transition: all 0.3s ease;
             outline: none;
         }
@@ -674,7 +825,7 @@
         .form-modal select:focus {
             border-color: rgba(0, 255, 255, 0.5);
             background: linear-gradient(145deg, rgba(0, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         .form-modal input::placeholder,
@@ -684,15 +835,15 @@
 
         .close-btn {
             position: absolute;
-            top: 15px;
-            right: 20px;
+            top: 12px;
+            right: 15px;
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -709,16 +860,16 @@
         /* WhatsApp otimizado */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 70px;
-            height: 70px;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 50%, #25D366 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
             z-index: 1500;
             transition: all 0.3s ease;
             animation: whatsappPulse 2s infinite;
@@ -727,81 +878,133 @@
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.15);
-            box-shadow: 0 15px 45px rgba(37, 211, 102, 0.6);
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float img {
+            width: 26px;
+            height: 26px;
         }
 
         /* Responsive otimizado */
+        @media (max-width: 1200px) {
+            .main-content {
+                max-width: 100%;
+                padding: 0 25px;
+            }
+
+            .services-grid,
+            .content-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+            }
+
+            .page-header h1 {
+                font-size: 2.4rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            body {
+                font-size: 13px;
+            }
+
             .nav-left {
                 display: none;
             }
 
             nav {
                 justify-content: center;
-                padding: 0 20px;
+                padding: 0 15px;
             }
 
             .services-grid,
             .content-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
             }
 
             .content-card {
-                padding: 30px 20px;
+                padding: 25px 18px;
             }
 
             .main-logo {
-                width: 140px;
-                height: 140px;
-            }
-
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-
-            .service-card {
-                padding: 35px 25px;
-            }
-
-            .whatsapp-float {
-                width: 60px;
-                height: 60px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .form-modal {
-                padding: 30px 25px;
-                margin: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .service-card h1 {
-                font-size: 1.8rem;
+                width: 110px;
+                height: 110px;
             }
 
             .page-header h1 {
                 font-size: 2rem;
             }
 
-            .content-card {
-                padding: 25px 15px;
+            .service-card {
+                padding: 25px 20px;
             }
 
-            .main-logo {
-                width: 120px;
-                height: 120px;
+            .service-card h1 {
+                font-size: 1.6rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 18px;
+                right: 18px;
+            }
+
+            .whatsapp-float img {
+                width: 22px;
+                height: 22px;
+            }
+
+            .form-modal {
+                padding: 25px 20px;
+                margin: 15px;
+            }
+
+            .instagram-video-wrapper {
+                padding: 15px;
+                margin: 0 15px;
+            }
+
+            .instagram-video-player video {
+                height: 500px;
             }
         }
 
-        /* Animações otimizadas */
+        @media (max-width: 480px) {
+            .service-card h1 {
+                font-size: 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content-card {
+                padding: 20px 15px;
+            }
+
+            .main-logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .instagram-video-container h3 {
+                font-size: 1.6rem;
+            }
+
+            .instagram-video-player video {
+                height: 450px;
+            }
+        }
+
+        /* Animações */
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(15px);
             }
 
             to {
@@ -888,9 +1091,21 @@
             }
         }
 
+        @keyframes instagramFlow {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
         @keyframes modalSlideIn {
             from {
-                transform: scale(0.8) translateY(-50px);
+                transform: scale(0.8) translateY(-30px);
                 opacity: 0;
             }
 
@@ -904,11 +1119,11 @@
 
             0%,
             100% {
-                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
             }
 
             50% {
-                box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+                box-shadow: 0 10px 35px rgba(37, 211, 102, 0.6);
             }
         }
     </style>
@@ -937,7 +1152,7 @@
             <div class="nav-left">
                 <a onclick="showSection('home')" class="nav-link active">Home</a>
                 <a onclick="showSection('cursos')" class="nav-link">Cursos</a>
-                <a onclick="showSection('filmagem')" class="nav-link">Análises</a>
+                <a onclick="showSection('filmagem')" class="nav-link">Filmagem e Análises</a>
                 <a onclick="showSection('aulas')" class="nav-link">Treinos</a>
             </div>
             <div class="nav-right">
@@ -1023,7 +1238,7 @@
                     <h4>Materiais utilizados:</h4>
                     <p>Maiô ou sunga, touca, óculos, clip nasal.</p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('curso1')" class="futuristic-btn">Agendar Curso</button>
                     </div>
                 </div>
@@ -1051,7 +1266,7 @@
                     <h4>Materiais utilizados:</h4>
                     <p>Maiô ou sunga, touca, óculos, clip nasal.</p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('curso2')" class="futuristic-btn">Agendar Curso</button>
                     </div>
                 </div>
@@ -1078,7 +1293,7 @@
                     <h4>Materiais utilizados:</h4>
                     <p>Notebook, cronômetro, celular, bastão selfie e câmera de ação (para filmagens e análise).</p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('curso3')" class="futuristic-btn">Agendar Curso</button>
                     </div>
                 </div>
@@ -1092,6 +1307,26 @@
             <div class="page-header">
                 <h1>Filmagens & Análises Biomecânicas</h1>
                 <p>Tecnologia exclusiva para otimização da performance aquática</p>
+            </div>
+
+            <!-- Vídeo Instagram de Venda -->
+            <div class="instagram-video-container">
+                <h3>Veja Como Funciona na Prática!</h3>
+                <p>Descubra como nossas análises biomecânicas revolucionam o treinamento dos atletas</p>
+                <div class="instagram-video-wrapper" onclick="openInstagram()">
+                    <div class="instagram-overlay">
+                        <div class="instagram-logo"></div>
+                        <span class="instagram-text">@marcao_apolinario</span>
+                    </div>
+                    <div class="click-indicator">Clique para ver no Instagram</div>
+                    <div class="instagram-video-player">
+                        <video id="instagramVideo" autoplay muted loop>
+                            <source src="./assets/instagram-video.mp4" type="video/mp4">
+                            <source src="./assets/instagram-video.webm" type="video/webm">
+                            Seu navegador não suporta vídeo HTML5.
+                        </video>
+                    </div>
+                </div>
             </div>
 
             <div class="content-grid">
@@ -1116,7 +1351,7 @@
 
                     <p class="highlight"><strong>INCLUSO: filmagens editadas</strong></p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('filmagem1')" class="futuristic-btn">Agendar Filmagem</button>
                     </div>
                 </div>
@@ -1140,7 +1375,7 @@
                     <p class="highlight"><strong>INCLUSO: filmagens editadas e um relatório gráfico em PDF de suas
                             análises</strong></p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('veltest')" class="futuristic-btn">Solicitar Veltest</button>
                     </div>
                 </div>
@@ -1169,7 +1404,7 @@
                     <p class="highlight"><strong>INCLUSO: filmagens editadas e um relatório gráfico em PDF de suas
                             análises</strong></p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('idc')" class="futuristic-btn">Solicitar IdC</button>
                     </div>
                 </div>
@@ -1196,19 +1431,18 @@
                     <p class="highlight"><strong>INCLUSO: filmagens editadas e um relatório gráfico em PDF de suas
                             análises.</strong></p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('idr')" class="futuristic-btn">Solicitar IdR</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Vídeo demonstrativo -->
-            <div style="text-align: center; margin: 80px 0;">
-                <h3 style="color: #00ffff; font-size: 2rem; margin-bottom: 30px;">Demonstração das Análises</h3>
+            <!-- Vídeo demonstrativo YouTube -->
+            <div style="text-align: center; margin: 60px 0;">
+                <h3 style="color: #00ffff; font-size: 1.8rem; margin-bottom: 25px;">Demonstração das Análises</h3>
                 <div
-                    style="max-width: 800px; margin: 0 auto; position: relative; aspect-ratio: 16/9; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
-                    <iframe width="100%" height="100%"
-                        src="https://www.youtube.com/embed/fpK2leMPT7U?si=LTgk3ibnTte7eQzt&amp;start=7"
+                    style="max-width: 700px; margin: 0 auto; position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/GcbfcynCMps"
                         title="Demonstração das análises biomecânicas" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -1259,7 +1493,7 @@
                     <p><strong>Básicos:</strong> Maiô ou sunga, touca, óculos, roupão, toalha</p>
                     <p><strong>Extra:</strong> clip nasal, prancha, flutuador, snorkel frontal, palmar</p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('formativa')" class="futuristic-btn">Agendar Aulas</button>
                     </div>
                 </div>
@@ -1298,53 +1532,53 @@
                     <p><strong>Extra 1:</strong> clip nasal, prancha, flutuador, snorkel frontal, palmar</p>
                     <p><strong>Extra 2:</strong> corda, extensor de condicionamento físico</p>
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 25px;">
                         <button onclick="openForm('competitiva')" class="futuristic-btn">Agendar Treinos</button>
                     </div>
                 </div>
             </div>
 
             <!-- Diferenciais -->
-            <div style="text-align: center; margin: 80px 0;">
-                <h3 style="color: #00ffff; font-size: 2.5rem; margin-bottom: 50px;">Nossos Diferenciais</h3>
+            <div style="text-align: center; margin: 60px 0;">
+                <h3 style="color: #00ffff; font-size: 2rem; margin-bottom: 40px;">Nossos Diferenciais</h3>
                 <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto;">
                     <div class="differential-item"
-                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
-                        <div style="font-size: 3rem; margin-bottom: 20px;">🏊‍♂️</div>
-                        <h4 style="color: #00ffff; margin-bottom: 15px;">Metodologia Exclusiva</h4>
-                        <p>Método desenvolvido ao longo de 30+ anos de experiência</p>
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 18px; padding: 25px 18px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🏊‍♂️</div>
+                        <h4 style="color: #00ffff; margin-bottom: 12px; font-size: 1rem;">Metodologia Exclusiva</h4>
+                        <p style="font-size: 13px;">Método desenvolvido ao longo de 30+ anos de experiência</p>
                     </div>
                     <div class="differential-item"
-                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
-                        <div style="font-size: 3rem; margin-bottom: 20px;">📹</div>
-                        <h4 style="color: #00ffff; margin-bottom: 15px;">Análise por Vídeo</h4>
-                        <p>Filmagens e análises técnicas para evolução acelerada</p>
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 18px; padding: 25px 18px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">📹</div>
+                        <h4 style="color: #00ffff; margin-bottom: 12px; font-size: 1rem;">Análise por Vídeo</h4>
+                        <p style="font-size: 13px;">Filmagens e análises técnicas para evolução acelerada</p>
                     </div>
                     <div class="differential-item"
-                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
-                        <div style="font-size: 3rem; margin-bottom: 20px;">🎯</div>
-                        <h4 style="color: #00ffff; margin-bottom: 15px;">Treinamento Personalizado</h4>
-                        <p>Programas individualizados conforme objetivos e nível</p>
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 18px; padding: 25px 18px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🎯</div>
+                        <h4 style="color: #00ffff; margin-bottom: 12px; font-size: 1rem;">Treinamento Personalizado</h4>
+                        <p style="font-size: 13px;">Programas individualizados conforme objetivos e nível</p>
                     </div>
                     <div class="differential-item"
-                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease;">
-                        <div style="font-size: 3rem; margin-bottom: 20px;">🏆</div>
-                        <h4 style="color: #00ffff; margin-bottom: 15px;">Resultados Comprovados</h4>
-                        <p>Atletas formados em níveis estadual, nacional e internacional</p>
+                        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 18px; padding: 25px 18px; text-align: center; transition: all 0.3s ease;">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🏆</div>
+                        <h4 style="color: #00ffff; margin-bottom: 12px; font-size: 1rem;">Resultados Comprovados</h4>
+                        <p style="font-size: 13px;">Atletas formados em níveis estadual, nacional e internacional</p>
                     </div>
                 </div>
             </div>
 
             <!-- Imagem da equipe -->
             <div
-                style="position: relative; margin: 80px 0; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+                style="position: relative; margin: 60px 0; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);">
                 <img src="./assets/aulas-img.webp" alt="Equipe MRA Natação"
-                    style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                    style="width: 100%; height: 300px; object-fit: cover; display: block;">
                 <div
-                    style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(0, 17, 51, 0.7), rgba(0, 255, 255, 0.3)); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 40px;">
-                    <h3 style="font-size: 2.5rem; margin-bottom: 15px; color: #00ffff;">Faça Parte da Nossa Equipe</h3>
-                    <p style="font-size: 1.2rem; opacity: 0.9;">Junte-se aos nadadores que já transformaram sua
+                    style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(0, 17, 51, 0.7), rgba(0, 255, 255, 0.3)); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 30px;">
+                    <h3 style="font-size: 2rem; margin-bottom: 12px; color: #00ffff;">Faça Parte da Nossa Equipe</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Junte-se aos nadadores que já transformaram sua
                         performance</p>
                 </div>
             </div>
@@ -1371,7 +1605,7 @@
     <div class="form-overlay" id="formOverlay">
         <div class="form-modal">
             <button class="close-btn" onclick="closeForm()">&times;</button>
-            <h2 id="formTitle" style="color: white; margin-bottom: 20px;">Entre em Contato</h2>
+            <h2 id="formTitle" style="color: white; margin-bottom: 18px;">Entre em Contato</h2>
             <form action="https://formcarry.com/s/eR2DXm4xSg1" method="POST">
                 <input type="text" name="nome" placeholder="Seu Nome" required>
                 <input type="email" name="email" placeholder="Seu Email" required>
@@ -1386,7 +1620,7 @@
 
     <!-- WhatsApp -->
     <a href="https://wa.me/5511942314022" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-        <img width="30" height="30" src="https://img.icons8.com/ios/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
+        <img width="26" height="26" src="https://img.icons8.com/ios/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
     </a>
 
     <script>
@@ -1398,6 +1632,7 @@
             createBubbles();
             initializeParallax();
             addHoverEffects();
+            initializeVideoAutoplay();
         }
 
         // Preloader
@@ -1411,32 +1646,61 @@
             }, 2000);
         }
 
+        // Autoplay do vídeo quando seção fica visível
+        function initializeVideoAutoplay() {
+            const video = document.getElementById('instagramVideo');
+            if (!video) return;
+
+            // Observer para detectar quando a seção de filmagem fica visível
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.id === 'filmagem') {
+                        // Pequeno delay para garantir que o vídeo seja carregado
+                        setTimeout(() => {
+                            video.play().catch(e => console.log('Autoplay impedido pelo navegador'));
+                        }, 500);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            // Observa a seção filmagem
+            const filmagemSection = document.getElementById('filmagem');
+            if (filmagemSection) {
+                observer.observe(filmagemSection);
+            }
+        }
+
+        // Função para abrir Instagram
+        function openInstagram() {
+            window.open('https://www.instagram.com/p/DN-gIytkW-D/', '_blank');
+        }
+
         // Bolhas
         function createBubbles() {
             const container = document.getElementById('bubbles');
             if (!container) return;
 
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < 12; i++) {
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
                 bubble.style.left = Math.random() * 100 + '%';
-                bubble.style.width = bubble.style.height = Math.random() * 20 + 10 + 'px';
+                bubble.style.width = bubble.style.height = Math.random() * 15 + 8 + 'px';
                 bubble.style.animationDelay = Math.random() * 10 + 's';
-                bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                bubble.style.animationDuration = (Math.random() * 4 + 6) + 's';
                 container.appendChild(bubble);
             }
 
             setInterval(() => {
-                if (container.children.length < 10) createSingleBubble(container);
-            }, 3000);
+                if (container.children.length < 8) createSingleBubble(container);
+            }, 4000);
         }
 
         function createSingleBubble(container) {
             const bubble = document.createElement('div');
             bubble.className = 'bubble';
             bubble.style.left = Math.random() * 100 + '%';
-            bubble.style.width = bubble.style.height = Math.random() * 15 + 8 + 'px';
-            bubble.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            bubble.style.width = bubble.style.height = Math.random() * 12 + 6 + 'px';
+            bubble.style.animationDuration = (Math.random() * 3 + 7) + 's';
             container.appendChild(bubble);
 
             setTimeout(() => {
@@ -1453,8 +1717,8 @@
                 const waves = document.querySelectorAll('.water-wave');
 
                 waves.forEach((wave, index) => {
-                    const speed = 0.3 + (index * 0.1);
-                    const rotation = scrolled * 0.02;
+                    const speed = 0.2 + (index * 0.08);
+                    const rotation = scrolled * 0.015;
                     wave.style.transform = `translateX(-50%) translateY(${scrolled * speed}px) rotate(${rotation}deg)`;
                 });
 
@@ -1480,6 +1744,16 @@
             const targetSection = document.getElementById(sectionName);
             if (targetSection) {
                 targetSection.classList.add('active');
+
+                // Se for seção filmagem, tenta reproduzir o vídeo
+                if (sectionName === 'filmagem') {
+                    setTimeout(() => {
+                        const video = document.getElementById('instagramVideo');
+                        if (video) {
+                            video.play().catch(e => console.log('Autoplay impedido pelo navegador'));
+                        }
+                    }, 300);
+                }
             }
 
             document.querySelectorAll('.nav-link').forEach(link => {
@@ -1537,7 +1811,7 @@
         function addHoverEffects() {
             document.querySelectorAll('.differential-item').forEach(item => {
                 item.addEventListener('mouseenter', function () {
-                    this.style.transform = 'translateY(-10px)';
+                    this.style.transform = 'translateY(-8px)';
                     this.style.backgroundColor = 'rgba(0, 255, 255, 0.1)';
                 });
 
